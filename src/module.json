@@ -1,8 +1,8 @@
 {
-	"id": "ignore-vision",
-	"title": "Ignore Vision",
+	"id": "ignore-vision-variant",
+	"title": "Ignore Vision Variant",
 	"description": "Allows the GM to continue seeing everything while selecting tokens with vision",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"authors": [
 		{
 			"name": "Manuel Vögele",
@@ -76,12 +76,12 @@
 		"maximum": 10
 	},
 	"manifestPlusVersion": "1.2.1",
-	"url": "https://github.com/manuelVo/foundryvtt-ignore-vision",
-	"manifest": "https://github.com/manuelVo/foundryvtt-ignore-vision/releases/latest/download/module.json",
-	"download": "https://github.com/manuelVo/foundryvtt-ignore-vision/releases/latest/download/module.zip",
-	"readme": "https://github.com/manuelVo/foundryvtt-ignore-vision/blob/v2.0.1/README.md",
-	"changelog": "https://github.com/manuelVo/foundryvtt-ignore-vision/blob/v2.0.1/CHANGELOG.md",
-	"bugs": "https://github.com/manuelVo/foundryvtt-ignore-vision/issues",
+	"url": "https://github.com/p4535992/foundryvtt-ignore-vision-variant",
+	"manifest": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/latest/download/module.json",
+	"download": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/latest/download/module.zip",
+	"readme": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/v2.0.2/README.md",
+	"changelog": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/v2.0.2/CHANGELOG.md",
+	"bugs": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/issues",
 	"allowBugReporter": true,
 	"relationships": {
 		"systems": [],

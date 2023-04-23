@@ -1,8 +1,8 @@
 {
-  "name": "ignore-vision",
-  "title": "Ignore Vision",
+  "name": "ignore-vision-variant",
+  "title": "Ignore Vision Variant",
   "description": "Allows the GM to continue seeing everything while selecting tokens with vision",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "main.js",
   "scripts": {
     "publish": "gulp publish --update",
