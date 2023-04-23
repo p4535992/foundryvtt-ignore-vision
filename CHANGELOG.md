@@ -1,7 +1,8 @@
-## 1.1.0
-### New features
-- Toggling the vision can now be bound to a keybinding
+### 2.0.1
 
+- Integration with GM Vision
 
-## 1.0.0
-Initial release
+### 0.0.1-2
+
+- First release
+
