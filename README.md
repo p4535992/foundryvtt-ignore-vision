@@ -22,7 +22,19 @@
 
 - The module provides the feature to disables the vision limitation when dragging a token as GM. Useful for not show the map to player when you move some token on the map. This is managed from a module setting.
 
-- The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting.
+- [Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)] The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting.
+
+  - This module adds a toggleable mode for GMs that ...
+  - increases the brightness of the scene,
+  - reveals the fog of war, and
+  - shows all tokens even if they wouldn't be visible normally from the perspective of the selected token.
+
+    Tokens that wouldn't be visible normally are highlighted by a hatched overlay.
+
+    ![demo](./wiki/demo.png)
+
+    The mode is toggled by a keybinding (default: `CTRL+G`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
+
 
 **NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision)
 

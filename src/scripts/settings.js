@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { handleKeybinding } from "./module.js";
+import { handleGmVision, handleKeybinding, handleKeybindingGmVision } from "../module.js";
 export const registerSettings = function () {
   game.settings.register(CONSTANTS.MODULE_NAME, "disableVisionOnDragAsGM", {
     name: `${CONSTANTS.MODULE_NAME}.setting.disableVisionOnDragAsGM.name`,
@@ -35,6 +35,33 @@ export const registerSettings = function () {
   // 		parseSetting(value);
   // 	}
   // });
+
+  game.settings.register(CONSTANTS.MODULE_NAME, "enableGmVision", {
+    name: `${CONSTANTS.MODULE_NAME}.setting.enableGmVision.name`,
+    hint: `${CONSTANTS.MODULE_NAME}.setting.enableGmVision.hint`,
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_NAME, "activeGmVision", {
+    name: "GM Vision",
+    scope: "client",
+    config: false,
+    type: Boolean,
+    default: false,
+    onChange: handleGmVision,
+    // onChange: (value) => {
+    //   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
+    //     return;
+    //   }
+
+    //   activeGmVision = value;
+    //   canvas.perception.update({ refreshVision: true }, true);
+    //   ui.controls.initialize();
+    // },
+  });
 };
 
 export const registerKeyBindings = function () {
@@ -46,5 +73,21 @@ export const registerKeyBindings = function () {
     editable: [{ key: "KeyI", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
     restricted: true,
     onDown: handleKeybinding,
+  });
+
+  game.keybindings.register(CONSTANTS.MODULE_NAME, "activeGmVision", {
+    name: "Toggle GM Vision",
+    editable: [{ key: "KeyG", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
+    restricted: true,
+    onDown: handleKeybindingGmVision,
+    // onDown: () => {
+    //   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
+    //     return;
+    //   }
+
+    //   game.settings.set(CONSTANTS.MODULE_NAME, "activeGmVision", !activeGmVision);
+
+    //   return true;
+    // },
   });
 };

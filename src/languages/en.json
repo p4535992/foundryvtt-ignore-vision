@@ -15,6 +15,10 @@
       "noTokenAnimationAsGM": {
         "name": "Disable Token Movement Animations for GM",
         "hint": "Dragging and dropping tokens around the map will resolve instantly instead of sliding."
+      },
+      "enableGmVision": {
+        "name": "Enable GM Vision",
+        "hint": "A embedded version of the module 'GM Vision'"
       }
     }
   }
