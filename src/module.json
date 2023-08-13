@@ -1,98 +1,98 @@
 {
-	"id": "ignore-vision-variant",
-	"title": "Ignore Vision Variant",
-	"description": "Allows the GM to continue seeing everything while selecting tokens with vision",
-	"version": "2.0.2",
-	"authors": [
-		{
-			"name": "Manuel Vögele",
-			"email": "develop@manuel-voegele.de",
-			"discord": "Stäbchenfisch#5107"
-		},
-		{
-			"name": "MarkPearce",
-			"github": "https://github.com/MarkPearce"
-		},
-		{
-			"name": "p4535992",
-			"url": "https://github.com/p4535992",
-			"discord": "",
-			"twitter": "",
-			"patreon": "",
-			"github": "p4535992",
-			"ko-fi": "",
-			"reddit": "",
-			"email": ""
-		}
-	],
-	"type": "module",
-	"socket": true,
-	"includes": [
-		"./assets/**",
-		"./lang/**",
-		"./languages/**",
-		"./scripts/**",
-		"./styles/**",
-		"./templates/**",
-		"./module.json",
-		"./README.md",
-		"./icons/**",
-		"./packs/**"
-	],
-	"media": [
-		{
-			"type": "icon",
-			"location": ""
-		},
-		{
-			"type": "cover",
-			"location": ""
-		},
-		{
-			"type": "screenshot",
-			"location": ""
-		}
-	],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "languages/en.json"
-		},
-		{
-			"lang": "de",
-			"name": "Deutsch",
-			"path": "languages/de.json"
-		}
-	],
-	"packs": [],
-	"systems": [],
-	"scripts": [],
-	"esmodules": ["main.js"],
-	"styles": [],
-	"compatibility": {
-		"minimum": 10,
-		"verified": 10,
-		"maximum": 10
-	},
-	"manifestPlusVersion": "1.2.1",
-	"url": "https://github.com/p4535992/foundryvtt-ignore-vision-variant",
-	"manifest": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/latest/download/module.json",
-	"download": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/latest/download/module.zip",
-	"readme": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/v2.0.2/README.md",
-	"changelog": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/v2.0.2/CHANGELOG.md",
-	"bugs": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/issues",
-	"allowBugReporter": true,
-	"relationships": {
-		"systems": [],
-		"requires": [
-			{
-				"id": "lib-wrapper",
-				"type": "module",
-				"manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
-				"compatibility": {}
-			}
-		],
-		"conflicts": []
-	}
+  "id": "ignore-vision-variant",
+  "title": "Ignore Vision Variant",
+  "description": "Allows the GM to continue seeing everything while selecting tokens with vision",
+  "version": "2.1.0",
+  "authors": [
+    {
+      "name": "Manuel Vögele",
+      "email": "develop@manuel-voegele.de",
+      "discord": "Stäbchenfisch#5107"
+    },
+    {
+      "name": "MarkPearce",
+      "github": "https://github.com/MarkPearce"
+    },
+    {
+      "name": "p4535992",
+      "url": "https://github.com/p4535992",
+      "discord": "",
+      "twitter": "",
+      "patreon": "",
+      "github": "p4535992",
+      "ko-fi": "",
+      "reddit": "",
+      "email": ""
+    }
+  ],
+  "type": "module",
+  "socket": true,
+  "includes": [
+    "./assets/**",
+    "./lang/**",
+    "./languages/**",
+    "./scripts/**",
+    "./styles/**",
+    "./templates/**",
+    "./module.json",
+    "./README.md",
+    "./icons/**",
+    "./packs/**"
+  ],
+  "media": [
+    {
+      "type": "icon",
+      "location": ""
+    },
+    {
+      "type": "cover",
+      "location": ""
+    },
+    {
+      "type": "screenshot",
+      "location": ""
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "languages/de.json"
+    }
+  ],
+  "packs": [],
+  "systems": [],
+  "scripts": [],
+  "esmodules": ["module.js"],
+  "styles": [],
+  "compatibility": {
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 11
+  },
+  "manifestPlusVersion": "1.2.1",
+  "url": "https://github.com/p4535992/foundryvtt-ignore-vision-variant",
+  "manifest": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/v2.1.0/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/v2.1.0/module.zip",
+  "readme": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/v2.1.0/README.md",
+  "changelog": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/v2.1.0/CHANGELOG.md",
+  "bugs": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/issues",
+  "allowBugReporter": true,
+  "relationships": {
+    "systems": [],
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+        "compatibility": {}
+      }
+    ],
+    "conflicts": []
+  }
 }
