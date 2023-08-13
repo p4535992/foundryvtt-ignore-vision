@@ -75,16 +75,7 @@ export function handleKeybinding() {
 
 function handleToggle(toggled) {
 	ignoreVision = toggled;
-	canvas.perception.schedule({
-		sight: {
-			initialize: true,
-			refresh: true,
-			forceUpdateFog: true
-		},
-		lighting: { refresh: true },
-		sounds: { refresh: true },
-		foreground: { refresh: true }
-	});
+	canvas.effects.visibility.refresh();
 }
 
 function tokenVision(wrapped) {
