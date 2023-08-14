@@ -29,7 +29,7 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("setup", () => {
-  if (game.settings.get(CONSTANTS.MODULE_NAME, "enableGmVision")) {
+  if (game.settings.get(CONSTANTS.MODULE_NAME, "enableGmVision") && !game.modules.get("gm-vision")?.active) {
     if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
       return;
     }
