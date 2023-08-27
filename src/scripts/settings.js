@@ -1,5 +1,7 @@
 import CONSTANTS from "./constants.js";
-import { handleGmVision, handleKeybinding, handleKeybindingGmVision } from "../module.js";
+import { handleKeybinding } from "../module.js";
+import { handleGmVision, handleKeybindingGmVision } from "./gm-vision-helpers.js";
+
 export const registerSettings = function () {
   game.settings.register(CONSTANTS.MODULE_NAME, "disableVisionOnDragAsGM", {
     name: `${CONSTANTS.MODULE_NAME}.setting.disableVisionOnDragAsGM.name`,
@@ -61,6 +63,33 @@ export const registerSettings = function () {
     //   canvas.perception.update({ refreshVision: true }, true);
     //   ui.controls.initialize();
     // },
+  });
+
+  game.settings.register(CONSTANTS.MODULE_NAME, "doNotRevealMyMap", {
+    name: `${CONSTANTS.MODULE_NAME}.setting.doNotRevealMyMap.name`,
+    hint: `${CONSTANTS.MODULE_NAME}.setting.doNotRevealMyMap.hint`,
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee", {
+    name: `${CONSTANTS.MODULE_NAME}.setting.invisibleTokensCanSee.name`,
+    hint: `${CONSTANTS.MODULE_NAME}.setting.invisibleTokensCanSee.hint`,
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_NAME, "invisibleTokensEmitLight", {
+    name: `${CONSTANTS.MODULE_NAME}.setting.invisibleTokensEmitLight.name`,
+    hint: `${CONSTANTS.MODULE_NAME}.setting.invisibleTokensEmitLight.hint`,
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean,
   });
 };
 

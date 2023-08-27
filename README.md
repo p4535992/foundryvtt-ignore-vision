@@ -35,6 +35,11 @@
 
     The mode is toggled by a keybinding (default: `CTRL+G`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
 
+- Invisible tokens can see too: allows tokens to be invisible and keeping their sight. This allows a player to be invisible to the rest of group and sneak around without the other players knowing the position. By default invisible tokens loose sight. If you check this setting, this behavior changes.
+
+- Invisible tokens can light too: Tokens with a light source still emit light if they are invisible.
+
+- Don't reveal my map: Do not reveal the map if a player token gets moved through a wall. Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see.
 
 **NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision)
 
@@ -113,6 +118,8 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - **[Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)**: [MIT]()
 - **[GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)**: [GPL 3.0](https://github.com/MAClavell/GM-Token-Drag-Visibility-v2/blob/main/LICENSE)
 - **[No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation)**: [GPL 3.0](https://github.com/MAClavell/No-Token-Vision-Animation/blob/main/LICENSE)
+- **[Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)**: [???]()
+- **[Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)**: [???]()
 
 This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
@@ -121,3 +128,5 @@ This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Li
 - [manuelVo](https://github.com/manuelVo/) for the module [Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)
 - [MAClavell](https://github.com/MAClavell/) for the module [GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)
 - [MAClavell](https://github.com/MAClavell/) for the module [No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation/)
+- [Soemer](https://github.com/soemer) for the module [Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)
+- [Soemer](https://github.com/soemer) for the module [Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)
