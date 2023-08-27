@@ -2,7 +2,7 @@
   "id": "ignore-vision-variant",
   "title": "Ignore Vision Variant",
   "description": "Allows the GM to continue seeing everything while selecting tokens with vision",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "authors": [
     {
       "name": "Manuel Vögele",
@@ -77,8 +77,8 @@
   },
   "manifestPlusVersion": "1.2.1",
   "url": "https://github.com/p4535992/foundryvtt-ignore-vision-variant",
-  "manifest": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/2.1.3/module.json",
-  "download": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/2.1.3/module.zip",
+  "manifest": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/2.1.4/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/2.1.4/module.zip",
   "readme": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/master/README.md",
   "changelog": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/master/CHANGELOG.md",
   "bugs": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/issues",
@@ -93,6 +93,27 @@
         "compatibility": {}
       }
     ],
-    "conflicts": []
+    "conflicts": [
+      {
+        "id": "ignore-vision",
+        "reason": "Redundancy of features you can disable 'Ignore Vision' module if you want"
+      },
+      {
+        "id": "gm-token-drag-visibility-v2",
+        "reason": "Redundancy of features you can disable 'GM Token-Drag Visibility v2' module if you want"
+      },
+      {
+        "id": "no-token-vision-animation",
+        "reason": "Redundancy of features you can disable 'No Token Vision Animation' module if you want"
+      },
+      {
+        "id": "invisible-tokens-can-see-too",
+        "reason": "Redundancy of features you can disable 'Invisible tokens can see too' module if you want"
+      },
+      {
+        "id": "do-not-reveal-my-map",
+        "reason": "Redundancy of features you can disable 'Don't reveal my map' module if you want"
+      }
+    ]
   }
 }

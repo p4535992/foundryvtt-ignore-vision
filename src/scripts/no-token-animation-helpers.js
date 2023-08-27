@@ -1,5 +1,7 @@
-export function registerNoTokenAnimation(tokenDoc, change, options) {
+import CONSTANTS from "./constants";
+
+export function registerNoTokenAnimation(token, changes, data) {
   if (game.settings.get(CONSTANTS.MODULE_NAME, "noTokenAnimationAsGM") && game.user.isGM) {
-    options.animate = false;
+    data.animate = false;
   }
 }

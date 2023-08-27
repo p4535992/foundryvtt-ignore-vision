@@ -1,3 +1,5 @@
+import CONSTANTS from "./constants";
+
 let isMouseDown = false;
 let isTokenWithSight = false;
 

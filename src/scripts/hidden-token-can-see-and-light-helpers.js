@@ -5,7 +5,8 @@ export function registerVisionSourceCalculation() {
     CONSTANTS.MODULE_NAME,
     "Token.prototype._isVisionSource",
     function (wrapped) {
-      if (wrapped()) {
+      const visible = wrapped();
+      if (visible) {
         return true;
       }
 
@@ -21,22 +22,24 @@ export function registerVisionSourceCalculation() {
     "WRAPPER"
   );
 
-  libWrapper.register(
-    CONSTANTS.MODULE_NAME,
-    "Token.prototype.isVisible",
-    function (wrapped) {
-      if (wrapped()) {
-        return true;
-      }
+  // NON SERVE E VA IN CONFLITTO
+  // libWrapper.register(
+  //   CONSTANTS.MODULE_NAME,
+  //   "Token.prototype.isVisible",
+  //   function (wrapped) {
+  //     const visible = wrapped();
+  //     if (visible) {
+  //       return true;
+  //     }
 
-      // If setting is not enabled or token is not hidden, don't change the behavior
-      if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee") || !this.document.hidden) {
-        return false;
-      }
-      return !game.user.isGM && (this.controlled || this.isOwner);
-    },
-    "WRAPPER"
-  );
+  //     // If setting is not enabled or token is not hidden, don't change the behavior
+  //     if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee") || !this.document.hidden) {
+  //       return false;
+  //     }
+  //     return !game.user.isGM && (this.controlled || this.isOwner);
+  //   },
+  //   "WRAPPER"
+  // );
 }
 
 export function registerLightSourceCalculation() {
@@ -44,7 +47,8 @@ export function registerLightSourceCalculation() {
     CONSTANTS.MODULE_NAME,
     "Token.prototype.emitsLight",
     function (wrapped) {
-      if (wrapped()) {
+      const visible = wrapped();
+      if (visible) {
         return true;
       }
 

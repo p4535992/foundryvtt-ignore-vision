@@ -8,6 +8,7 @@ import {
 import { registerGmVision } from "./scripts/gm-vision-helpers.js";
 import { registerDisableVisionOnDragAsGM } from "./scripts/disable-vision-on-drag-as-gm-helpers.js";
 import { registerDoNotRevealMyMap } from "./scripts/do-not-reveal-my-map-helpers.js";
+import { registerNoTokenAnimation } from "./scripts/no-token-animation-helpers.js";
 
 let ignoreVisionToggle;
 
@@ -62,6 +63,7 @@ Hooks.on("getSceneControlButtons", (controls) => {
 
 Hooks.on("preUpdateToken", (token, changes, data) => {
   registerDoNotRevealMyMap(token, changes, data);
+  registerNoTokenAnimation(token, changes, data);
 });
 
 export function handleKeybinding(value) {

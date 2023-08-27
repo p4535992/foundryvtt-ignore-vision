@@ -64,7 +64,18 @@ export function registerGmVision() {
           this.gmVisible = true;
         }
 
-        return visible || activeGmVision;
+        // return visible || activeGmVision;
+
+        // Invisible token can see feature...
+        if (visible || activeGmVision) {
+          return true;
+        }
+
+        // If setting is not enabled or token is not hidden, don't change the behavior
+        if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee") || !this.document.hidden) {
+          return false;
+        }
+        return !game.user.isGM && (this.controlled || this.isOwner);
       },
       libWrapper.WRAPPER,
       { perf_mode: libWrapper.PERF_FAST }
