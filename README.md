@@ -14,7 +14,7 @@
 
 [![Translation status](https://weblate.foundryvtt-hub.com/widgets/ignore-vision-variant/-/287x66-black.png)](https://weblate.foundryvtt-hub.com/engage/ignore-vision-variant/)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/staebchenfisch)
+### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
 
 - Adds a toggle to GM's token control menu, that allows them to ignore the vision of tokens. This makes it possible to see the entire map while moving tokens with vision around. This is managed from scene control setting
 
