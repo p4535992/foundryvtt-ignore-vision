@@ -120,6 +120,7 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - **[No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation)**: [GPL 3.0](https://github.com/MAClavell/No-Token-Vision-Animation/blob/main/LICENSE)
 - **[Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)**: [???]()
 - **[Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)**: [???]()
+- https://github.com/xaukael/canvas-fade-in-out
 
 This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
