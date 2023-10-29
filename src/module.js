@@ -13,7 +13,7 @@ import { registerNoTokenAnimation } from "./scripts/no-token-animation-helpers.j
 let ignoreVisionToggle;
 
 Hooks.once("init", () => {
-  window.ignoreVision = false;
+  window[`${CONSTANTS.MODULE_ID}`] = false;
 
   registerSettings();
   registerKeyBindings();
@@ -52,7 +52,7 @@ Hooks.on("getSceneControlButtons", (controls) => {
       title: game.i18n.localize(`${CONSTANTS.MODULE_ID}.toggle`),
       icon: "far fa-eye-slash",
       toggle: true,
-      active: ignoreVision,
+      active: window[`${CONSTANTS.MODULE_ID}`],
       onClick: handleToggle,
       visible: game.user.isGM,
     };
@@ -70,7 +70,7 @@ export function handleKeybinding(value) {
   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
     return false;
   }
-  const newToggleState = !ignoreVision;
+  const newToggleState = !window[`${CONSTANTS.MODULE_ID}`];
   ignoreVisionToggle.active = newToggleState;
   ui.controls.render();
   handleToggle(newToggleState);
@@ -79,12 +79,12 @@ export function handleKeybinding(value) {
 }
 
 function handleToggle(toggled) {
-  ignoreVision = toggled;
+  window[`${CONSTANTS.MODULE_ID}`] = toggled;
   canvas.effects.visibility.refresh();
 }
 
 function tokenVision(wrapped) {
-  if (ignoreVision && game.user.isGM) {
+  if (window[`${CONSTANTS.MODULE_ID}`] && game.user.isGM) {
     return false;
   }
   return wrapped();
