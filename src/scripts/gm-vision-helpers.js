@@ -4,12 +4,12 @@ import CONSTANTS from "./constants.js";
 let activeGmVision = false;
 
 export function registerGmVision() {
-  if (game.settings.get(CONSTANTS.MODULE_NAME, "enableGmVision") && !game.modules.get("gm-vision")?.active) {
+  if (game.settings.get(CONSTANTS.MODULE_ID, "enableGmVision") && !game.modules.get("gm-vision")?.active) {
     if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
       return;
     }
 
-    activeGmVision = game.settings.get(CONSTANTS.MODULE_NAME, "activeGmVision");
+    activeGmVision = game.settings.get(CONSTANTS.MODULE_ID, "activeGmVision");
 
     Hooks.on("getSceneControlButtons", (controls) => {
       const lighting = controls.find((c) => c.name === "lighting");
@@ -34,7 +34,7 @@ export function registerGmVision() {
     });
 
     libWrapper.register(
-      CONSTANTS.MODULE_NAME,
+      CONSTANTS.MODULE_ID,
       "CanvasVisibility.prototype.restrictVisibility",
       function (wrapped) {
         for (const token of canvas.tokens.placeables) {
@@ -48,7 +48,7 @@ export function registerGmVision() {
     );
 
     libWrapper.register(
-      CONSTANTS.MODULE_NAME,
+      CONSTANTS.MODULE_ID,
       "Token.prototype.isVisible",
       function (wrapped) {
         this.detectionFilter = undefined;
@@ -72,7 +72,7 @@ export function registerGmVision() {
         }
 
         // If setting is not enabled or token is not hidden, don't change the behavior
-        if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee") || !this.document.hidden) {
+        if (!game.settings.get(CONSTANTS.MODULE_ID, "invisibleTokensCanSee") || !this.document.hidden) {
           return false;
         }
         return !game.user.isGM && (this.controlled || this.isOwner);
@@ -92,7 +92,7 @@ export function registerGmVision() {
     };
 
     libWrapper.register(
-      CONSTANTS.MODULE_NAME,
+      CONSTANTS.MODULE_ID,
       "VisualEffectsMaskingFilter.fragmentHeader",
       function (wrapped, filterMode) {
         let header = wrapped(filterMode);
@@ -107,7 +107,7 @@ export function registerGmVision() {
     );
 
     libWrapper.register(
-      CONSTANTS.MODULE_NAME,
+      CONSTANTS.MODULE_ID,
       "VisualEffectsMaskingFilter.fragmentShader",
       function (wrapped, filterMode, postProcessModes = []) {
         if (filterMode === VisualEffectsMaskingFilter.FILTER_MODES.ILLUMINATION) {
@@ -136,7 +136,7 @@ export function handleKeybindingGmVision(value) {
     return;
   }
 
-  game.settings.set(CONSTANTS.MODULE_NAME, "activeGmVision", !activeGmVision);
+  game.settings.set(CONSTANTS.MODULE_ID, "activeGmVision", !activeGmVision);
 
   return true;
 }

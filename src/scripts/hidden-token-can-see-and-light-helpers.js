@@ -2,7 +2,7 @@ import CONSTANTS from "./constants";
 
 export function registerVisionSourceCalculation() {
   libWrapper.register(
-    CONSTANTS.MODULE_NAME,
+    CONSTANTS.MODULE_ID,
     "Token.prototype._isVisionSource",
     function (wrapped) {
       const visible = wrapped();
@@ -11,7 +11,7 @@ export function registerVisionSourceCalculation() {
       }
 
       // If setting is not enabled or token is not hidden, don't change the behavior
-      if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee") || !this.document.hidden) {
+      if (!game.settings.get(CONSTANTS.MODULE_ID, "invisibleTokensCanSee") || !this.document.hidden) {
         return false;
       }
       if (!canvas.effects.visibility.tokenVision || !this.hasSight || game.user.isGM) {
@@ -24,7 +24,7 @@ export function registerVisionSourceCalculation() {
 
   // NON SERVE E VA IN CONFLITTO
   // libWrapper.register(
-  //   CONSTANTS.MODULE_NAME,
+  //   CONSTANTS.MODULE_ID,
   //   "Token.prototype.isVisible",
   //   function (wrapped) {
   //     const visible = wrapped();
@@ -33,7 +33,7 @@ export function registerVisionSourceCalculation() {
   //     }
 
   //     // If setting is not enabled or token is not hidden, don't change the behavior
-  //     if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensCanSee") || !this.document.hidden) {
+  //     if (!game.settings.get(CONSTANTS.MODULE_ID, "invisibleTokensCanSee") || !this.document.hidden) {
   //       return false;
   //     }
   //     return !game.user.isGM && (this.controlled || this.isOwner);
@@ -44,7 +44,7 @@ export function registerVisionSourceCalculation() {
 
 export function registerLightSourceCalculation() {
   libWrapper.register(
-    CONSTANTS.MODULE_NAME,
+    CONSTANTS.MODULE_ID,
     "Token.prototype.emitsLight",
     function (wrapped) {
       const visible = wrapped();
@@ -53,7 +53,7 @@ export function registerLightSourceCalculation() {
       }
 
       // If setting is not enabled or token is not hidden, don't change the behavior
-      if (!game.settings.get(CONSTANTS.MODULE_NAME, "invisibleTokensEmitLight") || !this.document.hidden) {
+      if (!game.settings.get(CONSTANTS.MODULE_ID, "invisibleTokensEmitLight") || !this.document.hidden) {
         return false;
       }
       let light = this.document.light;

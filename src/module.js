@@ -18,8 +18,8 @@ Hooks.once("init", () => {
   registerSettings();
   registerKeyBindings();
 
-  // libWrapper.register(CONSTANTS.MODULE_NAME, "SightLayer.prototype.tokenVision", tokenVision, "MIXED");
-  libWrapper.register(CONSTANTS.MODULE_NAME, "CanvasVisibility.prototype.tokenVision", tokenVision, "MIXED");
+  // libWrapper.register(CONSTANTS.MODULE_ID, "SightLayer.prototype.tokenVision", tokenVision, "MIXED");
+  libWrapper.register(CONSTANTS.MODULE_ID, "CanvasVisibility.prototype.tokenVision", tokenVision, "MIXED");
 
   registerDisableVisionOnDragAsGM();
 });
@@ -49,7 +49,7 @@ Hooks.on("getSceneControlButtons", (controls) => {
   if (!ignoreVisionToggle) {
     ignoreVisionToggle = {
       name: "ignoreVision",
-      title: game.i18n.localize(`${CONSTANTS.MODULE_NAME}.toggle`),
+      title: game.i18n.localize(`${CONSTANTS.MODULE_ID}.toggle`),
       icon: "far fa-eye-slash",
       toggle: true,
       active: ignoreVision,

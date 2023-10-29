@@ -4,14 +4,14 @@ let isMouseDown = false;
 let isTokenWithSight = false;
 
 export function registerDisableVisionOnDragAsGM() {
-  if (game.settings.get(CONSTANTS.MODULE_NAME, "disableVisionOnDragAsGM")) {
-    libWrapper.register(CONSTANTS.MODULE_NAME, "Token.prototype._onDragLeftStart", onDragLeftStartHandler, "WRAPPER");
+  if (game.settings.get(CONSTANTS.MODULE_ID, "disableVisionOnDragAsGM")) {
+    libWrapper.register(CONSTANTS.MODULE_ID, "Token.prototype._onDragLeftStart", onDragLeftStartHandler, "WRAPPER");
 
-    libWrapper.register(CONSTANTS.MODULE_NAME, "Token.prototype._onDragLeftMove", onDragLeftMoveHandler, "WRAPPER");
+    libWrapper.register(CONSTANTS.MODULE_ID, "Token.prototype._onDragLeftMove", onDragLeftMoveHandler, "WRAPPER");
 
-    libWrapper.register(CONSTANTS.MODULE_NAME, "Token.prototype._onDragLeftDrop", onDragLeftDropHandler, "WRAPPER");
+    libWrapper.register(CONSTANTS.MODULE_ID, "Token.prototype._onDragLeftDrop", onDragLeftDropHandler, "WRAPPER");
 
-    libWrapper.register(CONSTANTS.MODULE_NAME, "Token.prototype._onDragLeftCancel", onDragLeftCancelHandler, "WRAPPER");
+    libWrapper.register(CONSTANTS.MODULE_ID, "Token.prototype._onDragLeftCancel", onDragLeftCancelHandler, "WRAPPER");
   }
 }
 
