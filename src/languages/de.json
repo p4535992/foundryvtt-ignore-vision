@@ -1,5 +1,5 @@
 {
-  "ignore-vision-variant": {
+  "vision-toolkit": {
     "keybinding": {
       "toggleVision": {
         "name": "Sicht umschalten",

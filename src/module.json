@@ -1,12 +1,11 @@
 {
-  "id": "ignore-vision-variant",
-  "title": "Ignore Vision Variant",
-  "description": "Allows the GM to continue seeing everything while selecting tokens with vision",
-  "version": "2.1.4",
+  "id": "vision-toolkit",
+  "title": "Vision Toolkit (ex Ignore Vision Variant)",
+  "description": "A all in one module for different feature connected to the vision",
+  "version": "2.1.5",
   "authors": [
     {
       "name": "Manuel Vögele",
-      "email": "develop@manuel-voegele.de",
       "discord": "Stäbchenfisch#5107"
     },
     {
@@ -76,12 +75,12 @@
     "maximum": 11
   },
   "manifestPlusVersion": "1.2.1",
-  "url": "https://github.com/p4535992/foundryvtt-ignore-vision-variant",
-  "manifest": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/2.1.4/module.json",
-  "download": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/releases/download/2.1.4/module.zip",
-  "readme": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/master/README.md",
-  "changelog": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/blob/master/CHANGELOG.md",
-  "bugs": "https://github.com/p4535992/foundryvtt-ignore-vision-variant/issues",
+  "url": "https://github.com/p4535992/foundryvtt-vision-toolkit",
+  "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.5/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.5/module.zip",
+  "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
+  "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
+  "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",
   "allowBugReporter": true,
   "relationships": {
     "systems": [],

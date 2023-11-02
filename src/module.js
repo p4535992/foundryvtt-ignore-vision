@@ -9,6 +9,7 @@ import { registerGmVision } from "./scripts/gm-vision-helpers.js";
 import { registerDisableVisionOnDragAsGM } from "./scripts/disable-vision-on-drag-as-gm-helpers.js";
 import { registerDoNotRevealMyMap } from "./scripts/do-not-reveal-my-map-helpers.js";
 import { registerNoTokenAnimation } from "./scripts/no-token-animation-helpers.js";
+import { tokenVision } from "./scripts/ignore-vision-helpers.js";
 
 let ignoreVisionToggle;
 
@@ -81,11 +82,4 @@ export function handleKeybinding(value) {
 function handleToggle(toggled) {
   window[`${CONSTANTS.MODULE_ID}`] = toggled;
   canvas.effects.visibility.refresh();
-}
-
-function tokenVision(wrapped) {
-  if (window[`${CONSTANTS.MODULE_ID}`] && game.user.isGM) {
-    return false;
-  }
-  return wrapped();
 }

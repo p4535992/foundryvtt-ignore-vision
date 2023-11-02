@@ -1,8 +1,8 @@
 {
-	"name": "ignore-vision-variant",
+	"name": "vision-toolkit",
 	"title": "Ignore Vision Variant",
 	"description": "Allows the GM to continue seeing everything while selecting tokens with vision",
-	"version": "2.1.4",
+	"version": "2.1.5",
 	"main": "module.js",
 	"license": "SEE LICENSE IN LICENSE",
 	"private": true,
