@@ -2,7 +2,7 @@
   "id": "vision-toolkit",
   "title": "Vision Toolkit (ex Ignore Vision Variant)",
   "description": "A all in one module for different feature connected to the vision",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "authors": [
     {
       "name": "Manuel Vögele",
@@ -76,8 +76,8 @@
   },
   "manifestPlusVersion": "1.2.1",
   "url": "https://github.com/p4535992/foundryvtt-vision-toolkit",
-  "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.5/module.json",
-  "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.5/module.zip",
+  "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.6/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.6/module.zip",
   "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
   "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
   "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",
@@ -112,6 +112,14 @@
       {
         "id": "do-not-reveal-my-map",
         "reason": "Redundancy of features you can disable 'Don't reveal my map' module if you want"
+      },
+      {
+        "id": "tokenwarp",
+        "reason": "Redundancy of features you can disable 'Token Warp' module if you want"
+      },
+      {
+        "id": "gm-vision",
+        "reason": "Redundancy of features you can disable 'Token Warp' module if you want"
       }
     ]
   }

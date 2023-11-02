@@ -16,6 +16,20 @@
 
 ### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
 
+A module that packs those 5-6 modules scattered around that help manage GM/Player lavisualization and other little things that people don't download because they don't want to have too many modules installed ....
+As always, I invite you to consult the list of `credits` and support the developers of individual features.
+Here the module list i have tried to merge in this single module:
+
+- [Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)
+- [GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)
+- [No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation/)
+- [Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)
+- [Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)
+- [token-warp](https://github.com/thatlonelybugbear/token-warp)
+- [GM Vision](https://github.com/dev7355608/gm-vision)
+
+## Features
+
 - Adds a toggle to GM's token control menu, that allows them to ignore the vision of tokens. This makes it possible to see the entire map while moving tokens with vision around. This is managed from scene control setting
 
 - The vision mode is toggled by a keybinding (default: `CTRL+I`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/eye-slash.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/eye.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
@@ -41,7 +55,7 @@
 
 - Don't reveal my map: Do not reveal the map if a player token gets moved through a wall. Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see.
 
-**NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision)
+**NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision) if you disable the module settings "_Enable GM Vision_"
 
 ## Installation
 
@@ -120,14 +134,19 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - **[No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation)**: [GPL 3.0](https://github.com/MAClavell/No-Token-Vision-Animation/blob/main/LICENSE)
 - **[Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)**: [???]()
 - **[Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)**: [???]()
-- https://github.com/xaukael/canvas-fade-in-out
+- **[canvas-fade-in-out](https://github.com/xaukael/canvas-fade-in-out)**: [MIT](https://github.com/xaukael/canvas-fade-in-out/blob/main/LICENSE)
+- **[token-warp](https://github.com/thatlonelybugbear/token-warp)**: [MIT](https://github.com/thatlonelybugbear/token-warp/blob/main/LICENSE)
+- **[GM Vision](https://github.com/dev7355608/gm-vision)**: [MIT](https://github.com/dev7355608/gm-vision/blob/main/LICENSE)
 
 This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
 ## Credits
 
-- [manuelVo](https://github.com/manuelVo/) for the module [Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)
-- [MAClavell](https://github.com/MAClavell/) for the module [GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)
-- [MAClavell](https://github.com/MAClavell/) for the module [No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation/)
-- [Soemer](https://github.com/soemer) for the module [Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)
-- [Soemer](https://github.com/soemer) for the module [Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)
+- Ty [manuelVo](https://github.com/manuelVo/) for the module [Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)
+- Ty [MAClavell](https://github.com/MAClavell/) for the module [GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)
+- Ty [MAClavell](https://github.com/MAClavell/) for the module [No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation/)
+- Ty [Soemer](https://github.com/soemer) for the module [Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)
+- Ty [Soemer](https://github.com/soemer) for the module [Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)
+- Ty [xaukael](https://github.com/xaukael) for the module [canvas-fade-in-out](https://github.com/xaukael/canvas-fade-in-out)
+- Ty [thatlonelybugbear](https://github.com/thatlonelybugbear) for the module [token-warp](https://github.com/thatlonelybugbear/token-warp)
+- Ty [dev7355608](https://github.com/dev7355608) for the module [GM Vision](https://github.com/dev7355608/gm-vision)
