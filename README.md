@@ -16,7 +16,7 @@
 
 ### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
 
-A module that packs those 5-6 modules scattered around that help manage GM/Player lavisualization and other little things that people don't download because they don't want to have too many modules installed ....
+A module that packs those 5-6 modules scattered around that help manage GM/Player visualization and other little things that people don't download because they don't want to have too many modules installed ....
 As always, I invite you to consult the list of `credits` and support the developers of individual features.
 Here the module list i have tried to merge in this single module:
 
