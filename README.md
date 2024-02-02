@@ -1,4 +1,4 @@
-# Ignore Vision Variant
+# Vision Toolkit
 
 ![Latest Release Download Count](https://img.shields.io/github/downloads/p4535992/foundryvtt-vision-toolkit/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge)
 
@@ -16,9 +16,9 @@
 
 ### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
 
-A module that packs those 5-6 modules scattered around that help manage GM/Player lavisualization and other little things that people don't download because they don't want to have too many modules installed ....
-As always, I invite you to consult the list of `credits` and support the developers of individual features.
-Here the module list i have tried to merge in this single module:
+A module that packs the features from those 5-6 modules scattered around that help manage GM/Player visualization and other little things that people don't download (or knwon) because they don't want to have too many modules installed ....
+As always, I invite you to consult the list of `credits` and support the single developers for each individualfeatures.
+Here the module list i have tried to "merge" in this single module:
 
 - [Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)
 - [GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)
