@@ -1,6 +1,6 @@
 import CONSTANTS from "./scripts/constants.js";
 import { registerKeyBindings, registerSettings } from "./scripts/settings.js";
-import { error } from "./scripts/lib.js";
+import { error } from "./scripts/lib/lib.js";
 import {
   registerLightSourceCalculation,
   registerVisionSourceCalculation,
@@ -9,9 +9,7 @@ import { registerGmVision } from "./scripts/gm-vision-helpers.js";
 import { registerDisableVisionOnDragAsGM } from "./scripts/disable-vision-on-drag-as-gm-helpers.js";
 import { registerDoNotRevealMyMap } from "./scripts/do-not-reveal-my-map-helpers.js";
 import { registerNoTokenAnimation } from "./scripts/no-token-animation-helpers.js";
-import { tokenVision } from "./scripts/ignore-vision-helpers.js";
-
-let ignoreVisionToggle;
+import { getSceneControlButtonsIgnoreVision, tokenVisionIgnoreVision } from "./scripts/ignore-vision-helpers.js";
 
 Hooks.once("init", () => {
   window[`${CONSTANTS.MODULE_ID}`] = false;
@@ -20,7 +18,7 @@ Hooks.once("init", () => {
   registerKeyBindings();
 
   // libWrapper.register(CONSTANTS.MODULE_ID, "SightLayer.prototype.tokenVision", tokenVision, "MIXED");
-  libWrapper.register(CONSTANTS.MODULE_ID, "CanvasVisibility.prototype.tokenVision", tokenVision, "MIXED");
+  libWrapper.register(CONSTANTS.MODULE_ID, "CanvasVisibility.prototype.tokenVision", tokenVisionIgnoreVision, "MIXED");
 
   registerDisableVisionOnDragAsGM();
 });
@@ -47,39 +45,10 @@ Hooks.once("ready", () => {
 });
 
 Hooks.on("getSceneControlButtons", (controls) => {
-  if (!ignoreVisionToggle) {
-    ignoreVisionToggle = {
-      name: "ignoreVision",
-      title: game.i18n.localize(`${CONSTANTS.MODULE_ID}.toggle`),
-      icon: "far fa-eye-slash",
-      toggle: true,
-      active: window[`${CONSTANTS.MODULE_ID}`],
-      onClick: handleToggle,
-      visible: game.user.isGM,
-    };
-  }
-  const tokenControls = controls.find((group) => group.name === "token").tools;
-  tokenControls.push(ignoreVisionToggle);
+  getSceneControlButtonsIgnoreVision(controls);
 });
 
 Hooks.on("preUpdateToken", (token, changes, data) => {
   registerDoNotRevealMyMap(token, changes, data);
   registerNoTokenAnimation(token, changes, data);
 });
-
-export function handleKeybinding(value) {
-  if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
-    return false;
-  }
-  const newToggleState = !window[`${CONSTANTS.MODULE_ID}`];
-  ignoreVisionToggle.active = newToggleState;
-  ui.controls.render();
-  handleToggle(newToggleState);
-
-  return true;
-}
-
-function handleToggle(toggled) {
-  window[`${CONSTANTS.MODULE_ID}`] = toggled;
-  canvas.effects.visibility.refresh();
-}

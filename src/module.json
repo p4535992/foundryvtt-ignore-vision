@@ -1,17 +1,9 @@
 {
   "id": "vision-toolkit",
-  "title": "Vision Toolkit (ex Ignore Vision Variant)",
-  "description": "A all in one module for different feature connected to the vision",
-  "version": "2.1.6",
+  "title": "Vision Toolkit",
+  "description": "A little module with many features for manage the token vision during the drag and rop on the canvas.",
+  "version": "2.1.7",
   "authors": [
-    {
-      "name": "Manuel Vögele",
-      "discord": "Stäbchenfisch#5107"
-    },
-    {
-      "name": "MarkPearce",
-      "github": "https://github.com/MarkPearce"
-    },
     {
       "name": "p4535992",
       "url": "https://github.com/p4535992",
@@ -76,8 +68,8 @@
   },
   "manifestPlusVersion": "1.2.1",
   "url": "https://github.com/p4535992/foundryvtt-vision-toolkit",
-  "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.6/module.json",
-  "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.6/module.zip",
+  "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.7/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.7/module.zip",
   "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
   "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
   "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",
@@ -96,6 +88,10 @@
       {
         "id": "ignore-vision",
         "reason": "Redundancy of features you can disable 'Ignore Vision' module if you want"
+      },
+      {
+        "id": "ignore-vision-variant",
+        "reason": "Redundancy of features you can disable 'Ignore Vision Variant' module if you want"
       },
       {
         "id": "gm-token-drag-visibility-v2",
@@ -119,7 +115,7 @@
       },
       {
         "id": "gm-vision",
-        "reason": "Redundancy of features you can disable 'Token Warp' module if you want"
+        "reason": "Redundancy of features you can disable 'GM Vision' module if you want"
       }
     ]
   }

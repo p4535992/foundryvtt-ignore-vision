@@ -1,6 +1,7 @@
 import CONSTANTS from "./constants.js";
-import { handleKeybinding } from "../module.js";
+
 import { handleGmVision, handleKeybindingGmVision } from "./gm-vision-helpers.js";
+import { handleKeybindingIgnoreVision } from "./ignore-vision-helpers.js";
 
 export const registerSettings = function () {
   game.settings.register(CONSTANTS.MODULE_ID, "disableVisionOnDragAsGM", {
@@ -101,7 +102,7 @@ export const registerKeyBindings = function () {
     // Ctrl + I
     editable: [{ key: "KeyI", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
     restricted: true,
-    onDown: handleKeybinding,
+    onDown: handleKeybindingIgnoreVision,
   });
 
   game.keybindings.register(CONSTANTS.MODULE_ID, "activeGmVision", {
