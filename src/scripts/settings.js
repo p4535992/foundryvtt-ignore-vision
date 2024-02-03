@@ -1,7 +1,7 @@
 import CONSTANTS from "./constants.js";
 
-import { handleGmVision, handleKeybindingGmVision } from "./gm-vision-helpers.js";
-import { handleKeybindingIgnoreVision } from "./ignore-vision-helpers.js";
+import { GmVisionHelpers } from "./gm-vision-helpers.js";
+import { IgnoreVisionHelpers } from "./ignore-vision-helpers.js";
 
 export const registerSettings = function () {
   game.settings.register(CONSTANTS.MODULE_ID, "disableVisionOnDragAsGM", {
@@ -54,13 +54,13 @@ export const registerSettings = function () {
     config: false,
     type: Boolean,
     default: false,
-    onChange: handleGmVision,
+    onChange: GmVisionHelpers.handleGmVision,
     // onChange: (value) => {
     //   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
     //     return;
     //   }
 
-    //   activeGmVision = value;
+    //   GmVisionHelpers.activeGmVision = value;
     //   canvas.perception.update({ refreshVision: true }, true);
     //   ui.controls.initialize();
     // },
@@ -102,14 +102,14 @@ export const registerKeyBindings = function () {
     // Ctrl + I
     editable: [{ key: "KeyI", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
     restricted: true,
-    onDown: handleKeybindingIgnoreVision,
+    onDown: IgnoreVisionHelpers.handleKeybindingIgnoreVision,
   });
 
   game.keybindings.register(CONSTANTS.MODULE_ID, "activeGmVision", {
     name: "Toggle GM Vision",
     editable: [{ key: "KeyG", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
     restricted: true,
-    onDown: handleKeybindingGmVision,
+    onDown: GmVisionHelpers.handleKeybindingGmVision,
     // onDown: () => {
     //   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
     //     return;
