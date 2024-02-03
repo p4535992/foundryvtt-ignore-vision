@@ -4,6 +4,10 @@
       "toggleVision": {
         "name": "Toggle Token Vision",
         "hint": " "
+      },
+      "activeGmVision": {
+        "name": "Toggle GM Vision",
+        "hint": " "
       }
     },
     "toggle": "Ignore Token Vision",

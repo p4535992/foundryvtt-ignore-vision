@@ -1,6 +1,7 @@
 import CONSTANTS from "./constants";
 
 export class IgnoreVisionHelpers {
+  static ignoreVisionEnable = false;
   static ignoreVisionToggle;
 
   static registerIgnoreVision() {
@@ -20,7 +21,7 @@ export class IgnoreVisionHelpers {
         title: game.i18n.localize(`${CONSTANTS.MODULE_ID}.toggle`),
         icon: "far fa-eye-slash",
         toggle: true,
-        active: window[`${CONSTANTS.MODULE_ID}`],
+        active: IgnoreVisionHelpers.ignoreVisionEnable,
         onClick: IgnoreVisionHelpers._handleToggleIgnoreVision,
         visible: game.user.isGM,
       };
@@ -30,7 +31,7 @@ export class IgnoreVisionHelpers {
   }
 
   static tokenVisionIgnoreVision(wrapped) {
-    if (window[`${CONSTANTS.MODULE_ID}`] && game.user.isGM) {
+    if (IgnoreVisionHelpers.ignoreVisionEnable && game.user.isGM) {
       return false;
     }
     return wrapped();
@@ -40,7 +41,7 @@ export class IgnoreVisionHelpers {
     if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
       return false;
     }
-    const newToggleState = !window[`${CONSTANTS.MODULE_ID}`];
+    const newToggleState = !IgnoreVisionHelpers.ignoreVisionEnable;
     IgnoreVisionHelpers.ignoreVisionToggle.active = newToggleState;
     ui.controls.render();
     IgnoreVisionHelpers._handleToggleIgnoreVision(newToggleState);
@@ -49,7 +50,7 @@ export class IgnoreVisionHelpers {
   }
 
   static _handleToggleIgnoreVision(toggled) {
-    window[`${CONSTANTS.MODULE_ID}`] = toggled;
+    IgnoreVisionHelpers.ignoreVisionEnable = toggled;
     canvas.effects.visibility.refresh();
   }
 }

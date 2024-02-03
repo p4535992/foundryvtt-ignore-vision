@@ -30,13 +30,13 @@ Here the module list i have tried to "merge" in this single module:
 
 ## Features
 
-- Adds a toggle to GM's token control menu, that allows them to ignore the vision of tokens. This makes it possible to see the entire map while moving tokens with vision around. This is managed from scene control setting
+- **Disable vision on the canvas for GM**: Adds a toggle to GM's token control menu, that allows them to ignore the vision of tokens. This makes it possible to see the entire map while moving tokens with vision around. This is managed from scene control setting
 
-- The vision mode is toggled by a keybinding (default: `CTRL+I`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/eye-slash.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/eye.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
+  The vision mode is toggled by a keybinding (default: `CTRL+I`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/eye-slash.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/eye.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
 
-- The module provides the feature to disables the vision limitation when dragging a token as GM. Useful for not show the map to player when you move some token on the map. This is managed from a module setting.
+- **Disable vision on Drag and Drop for GM**: The module provides the feature to disables the vision limitation when dragging a token as GM. Useful for not show the map to player when you move some token on the map. This is managed from a module setting.
 
-- [Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)] The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting.
+- **[Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)]** The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting.
 
   - This module adds a toggleable mode for GMs that ...
   - increases the brightness of the scene,
@@ -49,11 +49,11 @@ Here the module list i have tried to "merge" in this single module:
 
     The mode is toggled by a keybinding (default: `CTRL+G`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
 
-- Invisible tokens can see too: allows tokens to be invisible and keeping their sight. This allows a player to be invisible to the rest of group and sneak around without the other players knowing the position. By default invisible tokens loose sight. If you check this setting, this behavior changes.
+- **Invisible tokens can see too:** allows tokens to be invisible and keeping their sight. This allows a player to be invisible to the rest of group and sneak around without the other players knowing the position. By default invisible tokens loose sight. If you check this setting, this behavior changes.
 
-- Invisible tokens can light too: Tokens with a light source still emit light if they are invisible.
+- **Invisible tokens can light too:** Tokens with a light source still emit light if they are invisible.
 
-- Don't reveal my map: Do not reveal the map if a player token gets moved through a wall. Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see.
+- **Don't reveal my map:** Do not reveal the map if a player token gets moved through a wall. Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see.
 
 **NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision) if you disable the module settings "_Enable GM Vision_"
 
@@ -146,8 +146,8 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - **[Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)**: [MIT]()
 - **[GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)**: [GPL 3.0](https://github.com/MAClavell/GM-Token-Drag-Visibility-v2/blob/main/LICENSE)
 - **[No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation)**: [GPL 3.0](https://github.com/MAClavell/No-Token-Vision-Animation/blob/main/LICENSE)
-- **[Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)**: [???]()
-- **[Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)**: [???]()
+- **[Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)**: [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/)
+- **[Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)**: [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/)
 - **[canvas-fade-in-out](https://github.com/xaukael/canvas-fade-in-out)**: [MIT](https://github.com/xaukael/canvas-fade-in-out/blob/main/LICENSE)
 - **[token-warp](https://github.com/thatlonelybugbear/token-warp)**: [MIT](https://github.com/thatlonelybugbear/token-warp/blob/main/LICENSE)
 - **[GM Vision](https://github.com/dev7355608/gm-vision)**: [MIT](https://github.com/dev7355608/gm-vision/blob/main/LICENSE)

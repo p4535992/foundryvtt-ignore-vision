@@ -97,7 +97,7 @@ export const registerSettings = function () {
 export const registerKeyBindings = function () {
   game.keybindings.register(CONSTANTS.MODULE_ID, "toggleVision", {
     name: `${CONSTANTS.MODULE_ID}.keybinding.toggleVision.name`,
-    name: `${CONSTANTS.MODULE_ID}.keybinding.toggleVision.hint`,
+    hint: `${CONSTANTS.MODULE_ID}.keybinding.toggleVision.hint`,
     // editable: [{ key: "KeyI" }],
     // Ctrl + I
     editable: [{ key: "KeyI", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
@@ -106,7 +106,8 @@ export const registerKeyBindings = function () {
   });
 
   game.keybindings.register(CONSTANTS.MODULE_ID, "activeGmVision", {
-    name: "Toggle GM Vision",
+    name: `${CONSTANTS.MODULE_ID}.keybinding.activeGmVision.name`,
+    hint: `${CONSTANTS.MODULE_ID}.keybinding.activeGmVision.hint`,
     editable: [{ key: "KeyG", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
     restricted: true,
     onDown: GmVisionHelpers.handleKeybindingGmVision,
