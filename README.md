@@ -16,7 +16,7 @@
 
 ### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
 
-A module that packs the features from those 5-6 modules scattered around that help manage GM/Player visualization and other little things that people don't download (or knwon) because they don't want to have too many modules installed ....
+A module that packs the features from those 5-6 modules scattered around that help manage GM/Player visualization and other little things that people don't download (or known) because they don't want to have too many modules installed ....
 As always, I invite you to consult the list of `credits` and support the single developers for each individualfeatures.
 Here the module list i have tried to "merge" in this single module:
 
@@ -36,7 +36,7 @@ Here the module list i have tried to "merge" in this single module:
 
 - **Disable vision on Drag and Drop for GM**: The module provides the feature to disables the vision limitation when dragging a token as GM. Useful for not show the map to player when you move some token on the map. This is managed from a module setting.
 
-- **[Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)]** The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting.
+- **[Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)]** The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting. **NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision) if you disable the module settings "_Enable GM Vision_"
 
   - This module adds a toggleable mode for GMs that ...
   - increases the brightness of the scene,
@@ -54,8 +54,6 @@ Here the module list i have tried to "merge" in this single module:
 - **Invisible tokens can light too:** Tokens with a light source still emit light if they are invisible.
 
 - **Don't reveal my map:** Do not reveal the map if a player token gets moved through a wall. Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see.
-
-**NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision) if you disable the module settings "_Enable GM Vision_"
 
 ## Installation
 
