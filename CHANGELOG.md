@@ -1,3 +1,7 @@
+### 2.1.9
+
+- Add debug module settings
+
 ### 2.1.5-6-7-8
 
 - Clean up 2024

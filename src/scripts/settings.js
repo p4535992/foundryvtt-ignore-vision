@@ -92,6 +92,15 @@ export const registerSettings = function () {
     default: false,
     type: Boolean,
   });
+
+  game.settings.register(CONSTANTS.MODULE_ID, "debug", {
+    name: `${CONSTANTS.MODULE_ID}.setting.debug.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.debug.hint`,
+    scope: "client",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
 };
 
 export const registerKeyBindings = function () {

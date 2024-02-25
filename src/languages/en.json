@@ -35,6 +35,16 @@
       "invisibleTokensEmitLight": {
         "name": "Invisible tokens emit light",
         "hint": "Tokens with a light source still emit light if they are invisible."
+      },
+      "reset":{
+        "name": "Reset settings to default",
+        "label": "Reset Settings To Default",
+        "hint": "This will reset all of the settings of back to the active game system's default."
+      },
+      "debug": {
+        "name": "Enable debugging",
+        "label": "Prints debug messages to the console",
+        "hint": "Prints debug messages to the console"
       }
     }
   }
