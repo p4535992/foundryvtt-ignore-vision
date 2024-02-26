@@ -36,8 +36,10 @@ Here the module list i have tried to "merge" in this single module:
 
 - **Disable vision on Drag and Drop for GM**: The module provides the feature to disables the vision limitation when dragging a token as GM. Useful for not show the map to player when you move some token on the map. This is managed from a module setting.
 
-- **[Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)]** The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting. **NOTE:** This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision) if you disable the module settings "_Enable GM Vision_"
+- **Remove token animation fro GM**: The module provides the feature to remove token movement animations for the GM. Useful if you hate to see the movement of the token on the map. This is managed from a module setting.
 
+- **[Embedded feature of [GM Vision](https://github.com/dev7355608/gm-vision)]**
+  - This module work very well with the module [GM Vision](https://github.com/dev7355608/gm-vision) if you disable the module settings "_Enable GM Vision_"
   - This module adds a toggleable mode for GMs that ...
   - increases the brightness of the scene,
   - reveals the fog of war, and
