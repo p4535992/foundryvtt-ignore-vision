@@ -1,3 +1,7 @@
+### 2.1.10
+
+- Sync GM Vision
+
 ### 2.1.9
 
 - Add debug module settings

@@ -22,6 +22,21 @@ export class GmVisionHelpers {
                 lighting.icon = GmVisionHelpers.activeGmVision ? "fa-solid fa-lightbulb" : "fa-regular fa-lightbulb";
             });
 
+            Hooks.on("renderSceneControls", (app, html) => {
+                const lighting = html[0].querySelector(`.scene-control[data-control="lighting"]`);
+
+                if (!lighting) {
+                    return;
+                }
+
+                lighting.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+                    // MOD 4535992
+                    const active = game.settings.get(CONSTANTS.MODULE_ID, "activeGmVision");
+                    game.settings.set(CONSTANTS.MODULE_ID, "activeGmVision", !active);
+                });
+            });
+
             Hooks.on("drawCanvasVisibility", (layer) => {
                 layer.gmVision = layer.addChild(
                     new PIXI.LegacyGraphics().beginFill(0xffffff).drawShape(canvas.dimensions.rect.clone()).endFill(),
@@ -34,19 +49,21 @@ export class GmVisionHelpers {
                 canvas.effects.illumination.filter.uniforms.gmVision = GmVisionHelpers.activeGmVision;
             });
 
-            libWrapper.register(
-                CONSTANTS.MODULE_ID,
-                "CanvasVisibility.prototype.restrictVisibility",
-                function (wrapped) {
-                    for (const token of canvas.tokens.placeables) {
-                        token.gmVisible = false;
-                    }
+            if (foundry.utils.isNewerVersion(11, game.version)) {
+                libWrapper.register(
+                    CONSTANTS.MODULE_ID,
+                    "CanvasVisibility.prototype.restrictVisibility",
+                    function (wrapped) {
+                        for (const token of canvas.tokens.placeables) {
+                            token.gmVisible = false;
+                        }
 
-                    return wrapped();
-                },
-                libWrapper.WRAPPER,
-                { perf_mode: libWrapper.PERF_FAST },
-            );
+                        return wrapped();
+                    },
+                    libWrapper.WRAPPER,
+                    { perf_mode: libWrapper.PERF_FAST },
+                );
+            }
 
             libWrapper.register(
                 CONSTANTS.MODULE_ID,
@@ -58,12 +75,16 @@ export class GmVisionHelpers {
                     const visible = wrapped();
 
                     if (
-                        (GmVisionHelpers.activeGmVision && !visible) ||
-                        (this.document.hidden && canvas.effects.visionSources.some((s) => s.active))
+                        (GmVisionHelpers.activeGmVision && !visible) || //  && active
+                        (visible && this.document.hidden) // && canvas.effects.visionSources.some((s) => s.active))
                     ) {
-                        this.detectionFilter = GMVisionDetectionFilter.instance;
+                        // this.detectionFilter = GMVisionDetectionFilter.instance;
+                        this.detectionFilter = filter;
                         this.gmVisible = true;
+                        // return true;
                     }
+
+                    this.gmVisible = false;
 
                     // return visible || GmVisionHelpers.activeGmVision;
 
@@ -82,8 +103,13 @@ export class GmVisionHelpers {
                 { perf_mode: libWrapper.PERF_FAST },
             );
 
-            Hooks.on("canvasPan", (canvas, constrained) => {
-                GMVisionDetectionFilter.instance.thickness = Math.max(2 * Math.abs(constrained.scale), 1);
+            const filter = GMVisionDetectionFilter.create();
+
+            Hooks.on("canvasPan", (canvas, { x, y, scale }) => {
+                const { width, height } = canvas.app.screen;
+                filter.uniforms.origin.x = width / 2 - x * scale;
+                filter.uniforms.origin.y = height / 2 - y * scale;
+                filter.uniforms.thickness = (canvas.dimensions.size / 25) * scale;
             });
 
             VisualEffectsMaskingFilter.defaultUniforms.gmVision = false;

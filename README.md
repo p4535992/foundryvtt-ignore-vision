@@ -49,7 +49,7 @@ Here the module list i have tried to "merge" in this single module:
 
     ![demo](./wiki/demo.png)
 
-    The mode is toggled by a keybinding (default: `CTRL+G`). The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
+    The mode is toggled by a keybinding (default: `CTRL+G`) or by right-clicking the lighting controls button.. The light bulb icon of the lighting controls button indicates whether it's active (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: inactive; <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/lightbulb.svg" width="16px" height="16px" style="filter: invert(100%);">: active).
 
 - **Invisible tokens can see too:** allows tokens to be invisible and keeping their sight. This allows a player to be invisible to the rest of group and sneak around without the other players knowing the position. By default invisible tokens loose sight. If you check this setting, this behavior changes.
 
