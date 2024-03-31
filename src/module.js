@@ -9,40 +9,40 @@ import { IgnoreVisionHelpers } from "./scripts/ignore-vision-helpers.js";
 import Logger from "./scripts/lib/Logger.js";
 
 Hooks.once("init", () => {
-  registerSettings();
-  registerKeyBindings();
+    registerSettings();
+    registerKeyBindings();
 
-  IgnoreVisionHelpers.registerIgnoreVision();
+    IgnoreVisionHelpers.registerIgnoreVision();
 
-  DisableVisionOnDragAsGMHelpers.registerDisableVisionOnDragAsGM();
+    DisableVisionOnDragAsGMHelpers.registerDisableVisionOnDragAsGM();
 });
 
 Hooks.once("setup", () => {
-  GmVisionHelpers.registerGmVision();
+    GmVisionHelpers.registerGmVision();
 
-  HiddenTokenCanSeeAndLightHelpers.registerVisionSourceCalculation();
-  HiddenTokenCanSeeAndLightHelpers.registerLightSourceCalculation();
+    HiddenTokenCanSeeAndLightHelpers.registerVisionSourceCalculation();
+    HiddenTokenCanSeeAndLightHelpers.registerLightSourceCalculation();
 });
 
 Hooks.once("ready", () => {
-  // Do anything once the module is ready
-  if (!game.modules.get("lib-wrapper")?.active && game.user?.isGM) {
-    let word = "install and activate";
-    if (game.modules.get("lib-wrapper")) word = "activate";
-    throw Logger.error(`Requires the 'libWrapper' module. Please ${word} it.`);
-  }
-  // if (!game.modules.get("socketlib")?.active && game.user?.isGM) {
-  //   let word = "install and activate";
-  //   if (game.modules.get("socketlib")) word = "activate";
-  //   throw Logger.error(`Requires the 'socketlib' module. Please ${word} it.`);
-  // }
+    // Do anything once the module is ready
+    if (!game.modules.get("lib-wrapper")?.active && game.user?.isGM) {
+        let word = "install and activate";
+        if (game.modules.get("lib-wrapper")) word = "activate";
+        throw Logger.error(`Requires the 'libWrapper' module. Please ${word} it.`);
+    }
+    // if (!game.modules.get("socketlib")?.active && game.user?.isGM) {
+    //   let word = "install and activate";
+    //   if (game.modules.get("socketlib")) word = "activate";
+    //   throw Logger.error(`Requires the 'socketlib' module. Please ${word} it.`);
+    // }
 });
 
 Hooks.on("getSceneControlButtons", (controls) => {
-  IgnoreVisionHelpers.getSceneControlButtonsIgnoreVision(controls);
+    IgnoreVisionHelpers.getSceneControlButtonsIgnoreVision(controls);
 });
 
 Hooks.on("preUpdateToken", (token, changes, data) => {
-  DoNotRevealMyMapHelpers.registerDoNotRevealMyMap(token, changes, data);
-  NoTokenAnimationClassHelpers.registerNoTokenAnimation(token, changes, data);
+    DoNotRevealMyMapHelpers.registerDoNotRevealMyMap(token, changes, data);
+    NoTokenAnimationClassHelpers.registerNoTokenAnimation(token, changes, data);
 });

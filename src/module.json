@@ -1,122 +1,122 @@
 {
-  "id": "vision-toolkit",
-  "title": "Vision Toolkit",
-  "description": "A little module with many features for manage the token vision during the drag and rop on the canvas.",
-  "version": "2.1.9",
-  "authors": [
-    {
-      "name": "p4535992",
-      "url": "https://github.com/p4535992",
-      "discord": "",
-      "twitter": "",
-      "patreon": "",
-      "github": "p4535992",
-      "ko-fi": "",
-      "reddit": "",
-      "email": ""
-    }
-  ],
-  "type": "module",
-  "socket": true,
-  "includes": [
-    "./assets/**",
-    "./lang/**",
-    "./languages/**",
-    "./scripts/**",
-    "./styles/**",
-    "./templates/**",
-    "./module.json",
-    "./README.md",
-    "./icons/**",
-    "./packs/**"
-  ],
-  "media": [
-    {
-      "type": "icon",
-      "location": ""
-    },
-    {
-      "type": "cover",
-      "location": ""
-    },
-    {
-      "type": "screenshot",
-      "location": ""
-    }
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    },
-    {
-      "lang": "de",
-      "name": "Deutsch",
-      "path": "languages/de.json"
-    }
-  ],
-  "packs": [],
-  "systems": [],
-  "scripts": [],
-  "esmodules": ["module.js"],
-  "styles": [],
-  "compatibility": {
-    "minimum": 11,
-    "verified": 11,
-    "maximum": 11
-  },
-  "manifestPlusVersion": "1.2.1",
-  "url": "https://github.com/p4535992/foundryvtt-vision-toolkit",
-  "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.9/module.json",
-  "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.9/module.zip",
-  "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
-  "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
-  "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",
-  "allowBugReporter": true,
-  "relationships": {
-    "systems": [],
-    "requires": [
-      {
-        "id": "lib-wrapper",
-        "type": "module",
-        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
-        "compatibility": {}
-      }
+    "id": "vision-toolkit",
+    "title": "Vision Toolkit",
+    "description": "A little module with many features for manage the token vision during the drag and rop on the canvas.",
+    "version": "2.1.9",
+    "authors": [
+        {
+            "name": "p4535992",
+            "url": "https://github.com/p4535992",
+            "discord": "",
+            "twitter": "",
+            "patreon": "",
+            "github": "p4535992",
+            "ko-fi": "",
+            "reddit": "",
+            "email": ""
+        }
     ],
-    "conflicts": [
-      {
-        "id": "ignore-vision",
-        "reason": "Redundancy of features you can disable 'Ignore Vision' module if you want"
-      },
-      {
-        "id": "ignore-vision-variant",
-        "reason": "Redundancy of features you can disable 'Ignore Vision Variant' module if you want"
-      },
-      {
-        "id": "gm-token-drag-visibility-v2",
-        "reason": "Redundancy of features you can disable 'GM Token-Drag Visibility v2' module if you want"
-      },
-      {
-        "id": "no-token-vision-animation",
-        "reason": "Redundancy of features you can disable 'No Token Vision Animation' module if you want"
-      },
-      {
-        "id": "invisible-tokens-can-see-too",
-        "reason": "Redundancy of features you can disable 'Invisible tokens can see too' module if you want"
-      },
-      {
-        "id": "do-not-reveal-my-map",
-        "reason": "Redundancy of features you can disable 'Don't reveal my map' module if you want"
-      },
-      {
-        "id": "tokenwarp",
-        "reason": "Redundancy of features you can disable 'Token Warp' module if you want"
-      },
-      {
-        "id": "gm-vision",
-        "reason": "Redundancy of features you can disable 'GM Vision' module if you want"
-      }
-    ]
-  }
+    "type": "module",
+    "socket": true,
+    "includes": [
+        "./assets/**",
+        "./lang/**",
+        "./languages/**",
+        "./scripts/**",
+        "./styles/**",
+        "./templates/**",
+        "./module.json",
+        "./README.md",
+        "./icons/**",
+        "./packs/**"
+    ],
+    "media": [
+        {
+            "type": "icon",
+            "location": ""
+        },
+        {
+            "type": "cover",
+            "location": ""
+        },
+        {
+            "type": "screenshot",
+            "location": ""
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "languages/de.json"
+        }
+    ],
+    "packs": [],
+    "systems": [],
+    "scripts": [],
+    "esmodules": ["module.js"],
+    "styles": [],
+    "compatibility": {
+        "minimum": 11,
+        "verified": 11,
+        "maximum": 11
+    },
+    "manifestPlusVersion": "1.2.1",
+    "url": "https://github.com/p4535992/foundryvtt-vision-toolkit",
+    "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.9/module.json",
+    "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.9/module.zip",
+    "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
+    "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
+    "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",
+    "allowBugReporter": true,
+    "relationships": {
+        "systems": [],
+        "requires": [
+            {
+                "id": "lib-wrapper",
+                "type": "module",
+                "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+                "compatibility": {}
+            }
+        ],
+        "conflicts": [
+            {
+                "id": "ignore-vision",
+                "reason": "Redundancy of features you can disable 'Ignore Vision' module if you want"
+            },
+            {
+                "id": "ignore-vision-variant",
+                "reason": "Redundancy of features you can disable 'Ignore Vision Variant' module if you want"
+            },
+            {
+                "id": "gm-token-drag-visibility-v2",
+                "reason": "Redundancy of features you can disable 'GM Token-Drag Visibility v2' module if you want"
+            },
+            {
+                "id": "no-token-vision-animation",
+                "reason": "Redundancy of features you can disable 'No Token Vision Animation' module if you want"
+            },
+            {
+                "id": "invisible-tokens-can-see-too",
+                "reason": "Redundancy of features you can disable 'Invisible tokens can see too' module if you want"
+            },
+            {
+                "id": "do-not-reveal-my-map",
+                "reason": "Redundancy of features you can disable 'Don't reveal my map' module if you want"
+            },
+            {
+                "id": "tokenwarp",
+                "reason": "Redundancy of features you can disable 'Token Warp' module if you want"
+            },
+            {
+                "id": "gm-vision",
+                "reason": "Redundancy of features you can disable 'GM Vision' module if you want"
+            }
+        ]
+    }
 }

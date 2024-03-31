@@ -1,11 +1,11 @@
 {
-  "vision-toolkit": {
-    "keybinding": {
-      "toggleVision": {
-        "name": "Sicht umschalten",
-        "hint": " "
-      }
-    },
-    "toggle": "Sicht der Figuren ignorieren"
-  }
+    "vision-toolkit": {
+        "keybinding": {
+            "toggleVision": {
+                "name": "Sicht umschalten",
+                "hint": " "
+            }
+        },
+        "toggle": "Sicht der Figuren ignorieren"
+    }
 }

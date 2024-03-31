@@ -1,25 +1,25 @@
 export class GMVisionDetectionFilter extends AbstractBaseFilter {
-  /** @type {GMVisionDetectionFilter} */
-  static #instance;
+    /** @type {GMVisionDetectionFilter} */
+    static #instance;
 
-  /**
-   * The instance of this shader.
-   * @type {GMVisionDetectionFilter}
-   */
-  static get instance() {
-    return (this.#instance ??= this.create());
-  }
+    /**
+     * The instance of this shader.
+     * @type {GMVisionDetectionFilter}
+     */
+    static get instance() {
+        return (this.#instance ??= this.create());
+    }
 
-  /** @override */
-  static defaultUniforms = {
-    alphaScale: 1,
-    alphaThreshold: 0.6,
-    outlineColor: [1, 1, 1, 1],
-    thickness: 1,
-  };
+    /** @override */
+    static defaultUniforms = {
+        alphaScale: 1,
+        alphaThreshold: 0.6,
+        outlineColor: [1, 1, 1, 1],
+        thickness: 1,
+    };
 
-  /** @override */
-  static vertexShader = `\
+    /** @override */
+    static vertexShader = `\
         attribute vec2 aVertexPosition;
 
         uniform vec4 inputSize;
@@ -34,9 +34,9 @@ export class GMVisionDetectionFilter extends AbstractBaseFilter {
             gl_Position = vec4((projectionMatrix * vec3(position, 1.0)).xy, 0.0, 1.0);
         }`;
 
-  /** @override */
-  static get fragmentShader() {
-    return `\
+    /** @override */
+    static get fragmentShader() {
+        return `\
             varying vec2 vTextureCoord;
 
             uniform sampler2D uSampler;
@@ -56,7 +56,7 @@ export class GMVisionDetectionFilter extends AbstractBaseFilter {
                 float outerAlpha = innerAlpha;
 
                 for (float angle = 0.0; angle < ${(2 * Math.PI - this.#quality / 2).toFixed(
-                  7
+                    7,
                 )}; angle += ${this.#quality.toFixed(7)}) {
                     vec2 offset = inputPixel.zw * vec2(cos(angle), sin(angle)) * thickness;
                     outerAlpha = max(outerAlpha, sampleAlpha(vTextureCoord + offset));
@@ -67,59 +67,59 @@ export class GMVisionDetectionFilter extends AbstractBaseFilter {
 
                 gl_FragColor = outlineColor * (max((1.0 - innerAlpha) * outerAlpha, innerAlpha * hatchAlpha * 0.5) * 0.5);
             }`;
-  }
-
-  /**
-   * Quality of the outline according to performance mode.
-   * @returns {number}
-   */
-  static get #quality() {
-    switch (canvas.performance.mode) {
-      case CONST.CANVAS_PERFORMANCE_MODES.LOW:
-        return (Math.PI * 2) / 8;
-      case CONST.CANVAS_PERFORMANCE_MODES.MED:
-        return (Math.PI * 2) / 12;
-      default:
-        return (Math.PI * 2) / 16;
     }
-  }
 
-  /** @override */
-  static create(uniforms) {
-    const shader = super.create(uniforms);
+    /**
+     * Quality of the outline according to performance mode.
+     * @returns {number}
+     */
+    static get #quality() {
+        switch (canvas.performance.mode) {
+            case CONST.CANVAS_PERFORMANCE_MODES.LOW:
+                return (Math.PI * 2) / 8;
+            case CONST.CANVAS_PERFORMANCE_MODES.MED:
+                return (Math.PI * 2) / 12;
+            default:
+                return (Math.PI * 2) / 16;
+        }
+    }
 
-    shader.#updatePadding();
+    /** @override */
+    static create(uniforms) {
+        const shader = super.create(uniforms);
 
-    return shader;
-  }
+        shader.#updatePadding();
 
-  #updatePadding() {
-    this.padding = this.uniforms.thickness;
-  }
+        return shader;
+    }
 
-  /**
-   * The thickness of the outline.
-   * @returns {number}
-   */
-  get thickness() {
-    return this.uniforms.thickness;
-  }
+    #updatePadding() {
+        this.padding = this.uniforms.thickness;
+    }
 
-  set thickness(value) {
-    this.uniforms.thickness = value;
-    this.#updatePadding();
-  }
+    /**
+     * The thickness of the outline.
+     * @returns {number}
+     */
+    get thickness() {
+        return this.uniforms.thickness;
+    }
 
-  /** @override */
-  get autoFit() {
-    return this.uniforms.thickness <= 1;
-  }
+    set thickness(value) {
+        this.uniforms.thickness = value;
+        this.#updatePadding();
+    }
 
-  set autoFit(value) {}
+    /** @override */
+    get autoFit() {
+        return this.uniforms.thickness <= 1;
+    }
 
-  /** @override */
-  apply(filterManager, input, output, clear, currentState) {
-    this.uniforms.alphaScale = 1 / (currentState.target.worldAlpha || 1);
-    filterManager.applyFilter(this, input, output, clear);
-  }
+    set autoFit(value) {}
+
+    /** @override */
+    apply(filterManager, input, output, clear, currentState) {
+        this.uniforms.alphaScale = 1 / (currentState.target.worldAlpha || 1);
+        filterManager.applyFilter(this, input, output, clear);
+    }
 }
