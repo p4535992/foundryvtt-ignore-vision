@@ -27,6 +27,7 @@ Here the module list i have tried to "merge" in this single module:
 - [Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)
 - [token-warp](https://github.com/thatlonelybugbear/token-warp)
 - [GM Vision](https://github.com/dev7355608/gm-vision)
+- [Reveal Observable Tokens](https://github.com/dev7355608/reveal-observable-tokens)
 
 ## Features
 
@@ -56,6 +57,8 @@ Here the module list i have tried to "merge" in this single module:
 - **Invisible tokens can light too:** Tokens with a light source still emit light if they are invisible.
 
 - **Don't reveal my map:** Do not reveal the map if a player token gets moved through a wall. Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see.
+
+- **Reveal Observable Tokens:** Reveals tokens to non-GM users with Observer/Owner permissions regardless of vision. Observable/owned tokens that wouldn't be visible normally are highlighted by a hatched overlay.
 
 ## Installation
 
@@ -135,6 +138,30 @@ npm run-script lint
 npm run-script lint:fix
 ```
 
+### build:json
+
+`build:json` unpack LevelDB pack on `src/packs` to the json db sources in `src/packs/_source`very useful for backup your items and manually fix some hard issue with some text editor
+
+```bash
+npm run-script build:json
+```
+
+### build:clean
+
+`build:clean` clean packs json sources in `src/packs/_source`. NOTE: usually this command is launched after the command `build:json` and after make some modifications on the json source files with some text editor, but before the `build:db`
+
+```bash
+npm run-script build:clean
+```
+
+### build:db
+
+`build:db` packs the json db sources in `src/packs/_source` to LevelDB pack on `src/packs` with the new jsons. NOTE: usually this command is launched after the command `build:json` and after make some modifications on the json source files with some text editor
+
+```bash
+npm run-script build:db
+```
+
 ## [Changelog](./CHANGELOG.md)
 
 ## Issues
@@ -151,6 +178,7 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - **[canvas-fade-in-out](https://github.com/xaukael/canvas-fade-in-out)**: [MIT](https://github.com/xaukael/canvas-fade-in-out/blob/main/LICENSE)
 - **[token-warp](https://github.com/thatlonelybugbear/token-warp)**: [MIT](https://github.com/thatlonelybugbear/token-warp/blob/main/LICENSE)
 - **[GM Vision](https://github.com/dev7355608/gm-vision)**: [MIT](https://github.com/dev7355608/gm-vision/blob/main/LICENSE)
+- **[Reveal Observable Tokens](https://github.com/dev7355608/reveal-observable-tokens)**: [MIT](https://github.com/dev7355608/reveal-observable-tokens/blob/main/LICENSE)
 
 This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
@@ -164,3 +192,4 @@ This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Li
 - Ty [xaukael](https://github.com/xaukael) for the module [canvas-fade-in-out](https://github.com/xaukael/canvas-fade-in-out)
 - Ty [thatlonelybugbear](https://github.com/thatlonelybugbear) for the module [token-warp](https://github.com/thatlonelybugbear/token-warp)
 - Ty [dev7355608](https://github.com/dev7355608) for the module [GM Vision](https://github.com/dev7355608/gm-vision)
+- Ty [dev7355608](https://github.com/dev7355608) for the module [Reveal Observable Tokens](https://github.com/dev7355608/reveal-observable-tokens)

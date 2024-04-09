@@ -48,6 +48,15 @@ export const registerSettings = function () {
         type: Boolean,
     });
 
+    game.settings.register(CONSTANTS.MODULE_ID, "enableRevealObservableTokens", {
+        name: `${CONSTANTS.MODULE_ID}.setting.enableRevealObservableTokens.name`,
+        hint: `${CONSTANTS.MODULE_ID}.setting.enableRevealObservableTokens.hint`,
+        scope: "world",
+        config: true,
+        default: true,
+        type: Boolean,
+    });
+
     game.settings.register(CONSTANTS.MODULE_ID, "activeGmVision", {
         name: "GM Vision",
         scope: "client",
