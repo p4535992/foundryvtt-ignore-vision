@@ -18,7 +18,13 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("setup", () => {
-    GmVisionHelpers.registerGmVision();
+    if (foundry.utils.isNewerVersion(game.version, 11)) {
+        GmVisionHelpers.registerGmVision();
+    } else {
+        if (!game.settings.get("core", "noCanvas")) {
+            Hooks.once("canvasInit", GmVisionHelpers.registerGmVision);
+        }
+    }
 
     HiddenTokenCanSeeAndLightHelpers.registerVisionSourceCalculation();
     HiddenTokenCanSeeAndLightHelpers.registerLightSourceCalculation();
