@@ -1,3 +1,8 @@
+### 2.1.11
+
+- Sync GM Vision again
+- Added Reveal Observable Tokens
+
 ### 2.1.10
 
 - Sync GM Vision

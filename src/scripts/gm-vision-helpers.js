@@ -6,7 +6,7 @@ export class GmVisionHelpers {
 
     static registerGmVision() {
         if (game.settings.get(CONSTANTS.MODULE_ID, "enableGmVision") && !game.modules.get("gm-vision")?.active) {
-            if (game.user.isGM || game.settings.get("core", "noCanvas")) {
+            if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
                 return;
             }
 

@@ -7,6 +7,7 @@ import { DoNotRevealMyMapHelpers } from "./scripts/do-not-reveal-my-map-helpers.
 import { NoTokenAnimationClassHelpers } from "./scripts/no-token-animation-helpers.js";
 import { IgnoreVisionHelpers } from "./scripts/ignore-vision-helpers.js";
 import Logger from "./scripts/lib/Logger.js";
+import { RevealObservableTokensHelpers } from "./scripts/reveal-observable-tokens-helpers.js";
 
 Hooks.once("init", () => {
     registerSettings();
@@ -20,9 +21,13 @@ Hooks.once("init", () => {
 Hooks.once("setup", () => {
     if (foundry.utils.isNewerVersion(game.version, 11)) {
         GmVisionHelpers.registerGmVision();
+        RevealObservableTokensHelpers.registerRevealObservableTokens();
     } else {
         if (!game.settings.get("core", "noCanvas")) {
-            Hooks.once("canvasInit", GmVisionHelpers.registerGmVision);
+            Hooks.once("canvasInit", () => {
+                GmVisionHelpers.registerGmVision();
+                RevealObservableTokensHelpers.registerRevealObservableTokens();
+            });
         }
     }
 

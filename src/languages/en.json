@@ -24,6 +24,10 @@
                 "name": "Enable GM Vision",
                 "hint": "A embedded version of the module 'GM Vision'"
             },
+            "enableRevealObservableTokens": {
+                "name": "Enable Reveal Observable Tokens",
+                "hint": "A embedded version of the module 'Reveal Observable Tokens'"
+            },
             "doNotRevealMyMap": {
                 "name": "Do not reveal map on moving through wall",
                 "hint": "Cancels the animation of a token if it would be moved through a wall to prevent showing parts of a map a player should not be able to see."
