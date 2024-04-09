@@ -1,4 +1,4 @@
-export class GMVisionDetectionFilter extends AbstractBaseFilter {
+export class HatchFilter extends AbstractBaseFilter {
     /** @override */
     static vertexShader = `\
         attribute vec2 aVertexPosition;
@@ -44,4 +44,16 @@ export class GMVisionDetectionFilter extends AbstractBaseFilter {
         origin: { x: 0, y: 0 },
         thickness: 1,
     };
+
+    /** @override */
+    apply(filterManager, input, output, clearMode, currentState) {
+        const uniforms = this.uniforms;
+        const worldTransform = currentState.target.worldTransform;
+
+        uniforms.origin.x = worldTransform.tx;
+        uniforms.origin.y = worldTransform.ty;
+        uniforms.thickness = (canvas.dimensions.size / 25) * canvas.stage.scale.x;
+
+        super.apply(filterManager, input, output, clearMode, currentState);
+    }
 }

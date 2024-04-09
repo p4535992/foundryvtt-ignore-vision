@@ -1,4 +1,4 @@
-import { GMVisionDetectionFilter } from "./GMVisionDetectionFilter.js";
+import { HatchFilter } from "./GMVisionDetectionFilter.js";
 import CONSTANTS from "./constants.js";
 
 export class GmVisionHelpers {
@@ -37,18 +37,21 @@ export class GmVisionHelpers {
                 });
             });
 
+            let revealFog;
+
             Hooks.on("drawCanvasVisibility", (layer) => {
-                layer.gmVision = layer.addChild(
+                revealFog = layer.addChild(
                     new PIXI.LegacyGraphics().beginFill(0xffffff).drawShape(canvas.dimensions.rect.clone()).endFill(),
                 );
-                layer.gmVision.visible = false;
+                revealFog.visible = false;
             });
 
             Hooks.on("sightRefresh", (layer) => {
-                layer.gmVision.visible = GmVisionHelpers.activeGmVision;
+                revealFog.visible = GmVisionHelpers.activeGmVision;
                 canvas.effects.illumination.filter.uniforms.gmVision = GmVisionHelpers.activeGmVision;
             });
 
+            /*
             if (foundry.utils.isNewerVersion(11, game.version)) {
                 libWrapper.register(
                     CONSTANTS.MODULE_ID,
@@ -102,15 +105,46 @@ export class GmVisionHelpers {
                 libWrapper.WRAPPER,
                 { perf_mode: libWrapper.PERF_FAST },
             );
+            */
 
-            const filter = GMVisionDetectionFilter.create();
+            CONFIG.Token.objectClass = class extends CONFIG.Token.objectClass {
+                /** @override */
+                get isVisible() {
+                    // Fixes #9521 in V10
+                    this.detectionFilter = undefined;
 
-            Hooks.on("canvasPan", (canvas, { x, y, scale }) => {
-                const { width, height } = canvas.app.screen;
-                filter.uniforms.origin.x = width / 2 - x * scale;
-                filter.uniforms.origin.y = height / 2 - y * scale;
-                filter.uniforms.thickness = (canvas.dimensions.size / 25) * scale;
-            });
+                    const visible = super.isVisible;
+
+                    // if (!visible && active || visible && this.document.hidden) {
+                    //     this.detectionFilter = hatchFilter;
+
+                    //     return true;
+                    // }
+
+                    if (
+                        (GmVisionHelpers.activeGmVision && !visible) || //  && active
+                        (visible && this.document.hidden) // && canvas.effects.visionSources.some((s) => s.active))
+                    ) {
+                        this.detectionFilter = hatchFilter;
+                        // this.gmVisible = true;
+                        return true;
+                    }
+
+                    // return visible;
+                    // Invisible token can see feature...
+                    if (visible || GmVisionHelpers.activeGmVision) {
+                        return true;
+                    }
+
+                    // If setting is not enabled or token is not hidden, don't change the behavior
+                    if (!game.settings.get(CONSTANTS.MODULE_ID, "invisibleTokensCanSee") || !this.document.hidden) {
+                        return false;
+                    }
+                    return !game.user.isGM && (this.controlled || this.isOwner);
+                }
+            };
+
+            const hatchFilter = HatchFilter.create();
 
             VisualEffectsMaskingFilter.defaultUniforms.gmVision = false;
             VisualEffectsMaskingFilter.POST_PROCESS_TECHNIQUES.IGNORE_VISION_VARIANT_GM_VISION = {
@@ -118,6 +152,7 @@ export class GmVisionHelpers {
                 glsl: `if (gmVision) finalColor.rgb = sqrt(finalColor.rgb) * 0.5 + 0.5;`,
             };
 
+            /*
             libWrapper.register(
                 CONSTANTS.MODULE_ID,
                 "VisualEffectsMaskingFilter.fragmentHeader",
@@ -145,15 +180,36 @@ export class GmVisionHelpers {
                 },
                 libWrapper.WRAPPER,
             );
+            */
+
+            VisualEffectsMaskingFilter.fragmentHeader = ((wrapped) =>
+                function (filterMode) {
+                    let header = wrapped.call(this, filterMode);
+
+                    if (filterMode === VisualEffectsMaskingFilter.FILTER_MODES.ILLUMINATION) {
+                        header += "\nuniform bool gmVision;\n";
+                    }
+
+                    return header;
+                })(VisualEffectsMaskingFilter.fragmentHeader);
+
+            VisualEffectsMaskingFilter.fragmentShader = ((wrapped) =>
+                function (filterMode, postProcessModes = []) {
+                    if (filterMode === VisualEffectsMaskingFilter.FILTER_MODES.ILLUMINATION) {
+                        postProcessModes = [...postProcessModes, "GM_VISION"];
+                    }
+
+                    return wrapped.call(this, filterMode, postProcessModes);
+                })(VisualEffectsMaskingFilter.fragmentShader);
 
             // if (foundry.utils.isNewerVersion(game.version, 11)) {
-            //   Hooks.once("setup", setup);
+            //     Hooks.once("setup", setup);
             // } else {
-            //   Hooks.once("setup", () => {
-            //     if (!game.settings.get("core", "noCanvas")) {
-            //       Hooks.once("canvasInit", setup);
-            //     }
-            //   });
+            //     Hooks.once("setup", () => {
+            //         if (!game.settings.get("core", "noCanvas")) {
+            //             Hooks.once("canvasInit", setup);
+            //         }
+            //     });
             // }
         }
     }
@@ -173,7 +229,11 @@ export class GmVisionHelpers {
             return;
         }
         GmVisionHelpers.activeGmVision = value;
-        canvas.perception.update({ refreshVision: true }, true);
+        if (foundry.utils.isNewerVersion(game.version, 12)) {
+            canvas.perception.update({ refreshVision: true });
+        } else {
+            canvas.perception.update({ refreshVision: true }, true);
+        }
         ui.controls.initialize();
     }
 }

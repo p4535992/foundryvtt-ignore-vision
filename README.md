@@ -43,7 +43,7 @@ Here the module list i have tried to "merge" in this single module:
   - This module adds a toggleable mode for GMs that ...
   - increases the brightness of the scene,
   - reveals the fog of war, and
-  - shows all tokens even if they wouldn't be visible normally from the perspective of the selected token.
+  - shows all tokens even if they wouldn't be visible normally from the perspective of the controlled token(s).
 
     Tokens that wouldn't be visible normally are highlighted by a hatched overlay.
 

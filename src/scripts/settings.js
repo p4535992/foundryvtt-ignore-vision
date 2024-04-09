@@ -55,15 +55,6 @@ export const registerSettings = function () {
         type: Boolean,
         default: false,
         onChange: GmVisionHelpers.handleGmVision,
-        // onChange: (value) => {
-        //   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
-        //     return;
-        //   }
-
-        //   GmVisionHelpers.activeGmVision = value;
-        //   canvas.perception.update({ refreshVision: true }, true);
-        //   ui.controls.initialize();
-        // },
     });
 
     game.settings.register(CONSTANTS.MODULE_ID, "doNotRevealMyMap", {
