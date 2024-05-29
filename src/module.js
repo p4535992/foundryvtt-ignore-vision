@@ -9,6 +9,8 @@ import { IgnoreVisionHelpers } from "./scripts/ignore-vision-helpers.js";
 import Logger from "./scripts/lib/Logger.js";
 import { RevealObservableTokensHelpers } from "./scripts/reveal-observable-tokens-helpers.js";
 import { TokenWarpHelpers } from "./scripts/token-warp-helpers.js";
+import { RevealObservableTokensHelpersV11 } from "./scripts/reveal-observable-tokens-helpers-v11.js";
+import { GmVisionHelpersV11 } from "./scripts/gm-vision-helpers-v11.js";
 
 Hooks.once("init", () => {
     registerSettings();
@@ -20,15 +22,20 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("setup", () => {
-    if (foundry.utils.isNewerVersion(game.version, 11)) {
+    if (foundry.utils.isNewerVersion(game.version, 12)) {
         GmVisionHelpers.registerGmVision();
         RevealObservableTokensHelpers.registerRevealObservableTokens();
     } else {
-        if (!game.settings.get("core", "noCanvas")) {
-            Hooks.once("canvasInit", () => {
-                GmVisionHelpers.registerGmVision();
-                RevealObservableTokensHelpers.registerRevealObservableTokens();
-            });
+        if (foundry.utils.isNewerVersion(game.version, 11)) {
+            GmVisionHelpersV11.registerGmVision();
+            RevealObservableTokensHelpersV11.registerRevealObservableTokens();
+        } else {
+            if (!game.settings.get("core", "noCanvas")) {
+                Hooks.once("canvasInit", () => {
+                    GmVisionHelpersV11.registerGmVision();
+                    RevealObservableTokensHelpersV11.registerRevealObservableTokens();
+                });
+            }
         }
     }
 
