@@ -16,7 +16,7 @@ export class HatchFilter extends AbstractBaseFilter {
             vTextureCoord = (aVertexPosition * outputFrame.zw) * inputSize.zw;
             vec2 position = aVertexPosition * max(outputFrame.zw, vec2(0.0)) + outputFrame.xy;
             vec2 offset = position - origin;
-            vOffset = (offset.x + offset.y) / (2.0 * thickness);
+            vOffset = (offset.x + offset.y) / (1.414213562373095 * 2.0 * thickness);
             gl_Position = vec4((projectionMatrix * vec3(position, 1.0)).xy, 0.0, 1.0);
         }
     `;

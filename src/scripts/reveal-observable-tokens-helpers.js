@@ -11,43 +11,55 @@ export class RevealObservableTokensHelpers {
                 return;
             }
 
-            const testVisiblity = foundry.utils.isNewerVersion(game.version, 12)
-                ? (token) => {
-                      const { width, height } = token.getSize();
-                      const tolerance = Math.min(width, height) / 4;
+            CONFIG.Token.objectClass =
+                game.release.generation >= 12
+                    ? class extends CONFIG.Token.objectClass {
+                          /** @override */
+                          get isVisible() {
+                              if (
+                                  canvas.scene.tokenVision &&
+                                  !this.document.hidden &&
+                                  !this.vision?.active &&
+                                  this.actor?.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)
+                              ) {
+                                  const { width, height } = this.getSize();
+                                  const tolerance = Math.min(width, height) / 4;
+                                  const visible = canvas.visibility.testVisibility(this.center, {
+                                      tolerance,
+                                      object: this,
+                                  });
 
-                      return canvas.visibility.testVisibility(token.center, { tolerance, object: token });
-                  }
-                : (token) => {
-                      const tolerance = Math.min(token.w, token.h) / 4;
-                      if (foundry.utils.isNewerVersion(game.version, 12)) {
-                          return canvas.visibility.testVisibility(token.center, { tolerance, object: token });
-                      } else {
-                          return canvas.effects.visibility.testVisibility(token.center, { tolerance, object: token });
+                                  this.detectionFilter = visible ? null : hatchFilter;
+
+                                  return true;
+                              }
+
+                              return super.isVisible;
+                          }
                       }
-                  };
+                    : class extends CONFIG.Token.objectClass {
+                          /** @override */
+                          get isVisible() {
+                              if (
+                                  canvas.scene.tokenVision &&
+                                  !this.document.hidden &&
+                                  !canvas.effects.visionSources.get(this.sourceId)?.active &&
+                                  this.actor?.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)
+                              ) {
+                                  const tolerance = Math.min(this.w, this.h) / 4;
+                                  const visible = canvas.effects.visibility.testVisibility(this.center, {
+                                      tolerance,
+                                      object: this,
+                                  });
 
-            CONFIG.Token.objectClass = class extends CONFIG.Token.objectClass {
-                /** @override */
-                get isVisible() {
-                    if (
-                        canvas.scene.tokenVision &&
-                        !this.document.hidden &&
-                        this.actor?.testUserPermission(game.user, "OBSERVER") &&
-                        !canvas.effects.visionSources.get(this.sourceId)?.active
-                    ) {
-                        this.detectionFilter = undefined;
+                                  this.detectionFilter = visible ? undefined : hatchFilter;
 
-                        if (!testVisiblity(this)) {
-                            this.detectionFilter = hatchFilter;
-                        }
+                                  return true;
+                              }
 
-                        return true;
-                    }
-
-                    return super.isVisible;
-                }
-            };
+                              return super.isVisible;
+                          }
+                      };
 
             const hatchFilter = HatchFilter.create();
         }

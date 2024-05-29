@@ -1,5 +1,4 @@
 import CONSTANTS from "./constants.js";
-import { GmVisionHelpersV11 } from "./gm-vision-helpers-v11.js";
 
 import { GmVisionHelpers } from "./gm-vision-helpers.js";
 import { IgnoreVisionHelpers } from "./ignore-vision-helpers.js";
@@ -65,13 +64,7 @@ export const registerSettings = function () {
         config: false,
         type: Boolean,
         default: false,
-        onChange: (event) => {
-            if (foundry.utils.isNewerVersion(game.version, 12)) {
-                GmVisionHelpers.handleGmVision(event);
-            } else {
-                GmVisionHelpersV11.handleGmVision(event);
-            }
-        },
+        onChange: GmVisionHelpers.handleGmVision,
     });
 
     game.settings.register(CONSTANTS.MODULE_ID, "doNotRevealMyMap", {
@@ -177,13 +170,7 @@ export const registerKeyBindings = function () {
         hint: `${CONSTANTS.MODULE_ID}.keybinding.activeGmVision.hint`,
         editable: [{ key: "KeyG", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] }],
         restricted: true,
-        onDown: (event) => {
-            if (foundry.utils.isNewerVersion(game.version, 12)) {
-                GmVisionHelpers.handleKeybindingGmVision(event);
-            } else {
-                GmVisionHelpersV11.handleKeybindingGmVision(event);
-            }
-        },
+        onDown: GmVisionHelpers.handleKeybindingGmVision,
         // onDown: () => {
         //   if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
         //     return;
