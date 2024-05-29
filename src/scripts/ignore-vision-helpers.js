@@ -51,6 +51,10 @@ export class IgnoreVisionHelpers {
 
     static _handleToggleIgnoreVision(toggled) {
         IgnoreVisionHelpers.ignoreVisionEnable = toggled;
-        canvas.effects.visibility.refresh();
+        if (foundry.utils.isNewerVersion(game.version, 12)) {
+            canvas.visibility.refresh();
+        } else {
+            canvas.effects.visibility.refresh();
+        }
     }
 }

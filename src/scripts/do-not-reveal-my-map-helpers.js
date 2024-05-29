@@ -1,13 +1,17 @@
 import CONSTANTS from "./constants";
 
 export class DoNotRevealMyMapHelpers {
-    static registerDoNotRevealMyMap(token, changes, data) {
+    static registerDoNotRevealMyMapPreUpdateToken(token, changes, data, userId) {
         if (game.settings.get(CONSTANTS.MODULE_ID, "doNotRevealMyMap")) {
-            if ((changes?.x == token?.x && changes?.y == token?.y) || data.animate === false) {
+            if ((changes?.x === token?.x && changes?.y === token?.y) || data.animate === false) {
                 return;
             }
-
-            let target = token._object.getCenter(changes?.x ?? token.x, changes?.y ?? token.y);
+            let target = null;
+            if (foundry.utils.isNewerVersion(game.version, 12)) {
+                target = token._object.getCenterPoint({ x: changes?.x ?? token.x, y: changes?.y ?? token.y });
+            } else {
+                target = token._object.getCenter(changes?.x ?? token.x, changes?.y ?? token.y);
+            }
             if (token._object.checkCollision(target)) {
                 data.animate = false;
             }

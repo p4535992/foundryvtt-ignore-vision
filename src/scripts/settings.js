@@ -94,6 +94,56 @@ export const registerSettings = function () {
         type: Boolean,
     });
 
+    game.settings.register(CONSTANTS.MODULE_ID, "tokenWarpEnable", {
+        name: `${CONSTANTS.MODULE_ID}.setting.tokenWarpEnable.name`,
+        hint: `${CONSTANTS.MODULE_ID}.setting.tokenWarpEnable.hint`,
+        scope: "world",
+        config: true,
+        default: true,
+        type: Boolean,
+    });
+
+    game.settings.register(CONSTANTS.MODULE_ID, "tokenWarpWallsCancelTokenAnimation", {
+        name: `${CONSTANTS.MODULE_ID}.setting.tokenWarpWallsCancelTokenAnimation.name`,
+        hint: `${CONSTANTS.MODULE_ID}.setting.tokenWarpWallsCancelTokenAnimation.hint`,
+        scope: "world",
+        config: true,
+        default: true,
+        type: Boolean,
+    });
+
+    game.settings.register(CONSTANTS.MODULE_ID, "tokenWarpDefaultTokenAnimationSwitch", {
+        name: `${CONSTANTS.MODULE_ID}.setting.tokenWarpDefaultTokenAnimationSwitch.name`,
+        hint: `${CONSTANTS.MODULE_ID}.setting.tokenWarpDefaultTokenAnimationSwitch.hint`,
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+    });
+
+    game.settings.register(CONSTANTS.MODULE_ID, "tokenWarpExcludedScenes", {
+        name: `${CONSTANTS.MODULE_ID}.setting.tokenWarpExcludedScenes.name`,
+        hint: `${CONSTANTS.MODULE_ID}.setting.tokenWarpExcludedScenes.hint`,
+        scope: "world",
+        config: true,
+        default: "",
+        type: String,
+    });
+
+    game.settings.register(CONSTANTS.MODULE_ID, "tokenWarpDefaultTokenAnimation", {
+        name: `${CONSTANTS.MODULE_ID}.setting.tokenWarpDefaultTokenAnimation.name`,
+        hint: `${CONSTANTS.MODULE_ID}.setting.tokenWarpDefaultTokenAnimation.hint`,
+        scope: "world",
+        config: true,
+        default: 6,
+        type: Number,
+        range: {
+            max: 20,
+            min: 1,
+            step: 1,
+        },
+    });
+
     game.settings.register(CONSTANTS.MODULE_ID, "debug", {
         name: `${CONSTANTS.MODULE_ID}.setting.debug.name`,
         hint: `${CONSTANTS.MODULE_ID}.setting.debug.hint`,

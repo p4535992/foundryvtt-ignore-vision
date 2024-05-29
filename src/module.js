@@ -8,6 +8,7 @@ import { NoTokenAnimationClassHelpers } from "./scripts/no-token-animation-helpe
 import { IgnoreVisionHelpers } from "./scripts/ignore-vision-helpers.js";
 import Logger from "./scripts/lib/Logger.js";
 import { RevealObservableTokensHelpers } from "./scripts/reveal-observable-tokens-helpers.js";
+import { TokenWarpHelpers } from "./scripts/token-warp-helpers.js";
 
 Hooks.once("init", () => {
     registerSettings();
@@ -53,7 +54,8 @@ Hooks.on("getSceneControlButtons", (controls) => {
     IgnoreVisionHelpers.getSceneControlButtonsIgnoreVision(controls);
 });
 
-Hooks.on("preUpdateToken", (token, changes, data) => {
-    DoNotRevealMyMapHelpers.registerDoNotRevealMyMap(token, changes, data);
-    NoTokenAnimationClassHelpers.registerNoTokenAnimation(token, changes, data);
+Hooks.on("preUpdateToken", (token, changes, data, userId) => {
+    DoNotRevealMyMapHelpers.registerDoNotRevealMyMapPreUpdateToken(token, changes, data, userId);
+    NoTokenAnimationClassHelpers.registerNoTokenAnimationPreUpdateToken(token, changes, data, userId);
+    TokenWarpHelpers.registerTokenWarpPreUpdateToken(token, changes, data, userId);
 });

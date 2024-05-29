@@ -186,7 +186,7 @@ This package is under an [GPL 3.0](LICENSE) and the [Foundry Virtual Tabletop Li
 
 - Ty [manuelVo](https://github.com/manuelVo/) for the module [Ignore Vision](https://github.com/manuelVo/foundryvtt-ignore-vision/tree/master)
 - Ty [MAClavell](https://github.com/MAClavell/) for the module [GM Token Drag Visibility v2](https://github.com/MAClavell/gm-token-drag-visibility-v2)
-- Ty [MAClavell](https://github.com/MAClavell/) for the module [No Token Vision Animation](https://github.com/MAClavell/No-Token-Vision-Animation/)
+- Ty [MAClavell](https://github.com/MAClavell/) for the module [No Token Vision Animation](https://github.com/MAClaavell/No-Token-Vision-Animation/)
 - Ty [Soemer](https://github.com/soemer) for the module [Invisible tokens can see too](https://github.com/soemer/invisible-tokens-can-see-too)
 - Ty [Soemer](https://github.com/soemer) for the module [Don't reveal my map](https://github.com/soemer/do-not-reveal-my-map)
 - Ty [xaukael](https://github.com/xaukael) for the module [canvas-fade-in-out](https://github.com/xaukael/canvas-fade-in-out)

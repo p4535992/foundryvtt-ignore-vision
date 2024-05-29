@@ -15,8 +15,14 @@ export class HiddenTokenCanSeeAndLightHelpers {
                 if (!game.settings.get(CONSTANTS.MODULE_ID, "invisibleTokensCanSee") || !this.document.hidden) {
                     return false;
                 }
-                if (!canvas.effects.visibility.tokenVision || !this.hasSight || game.user.isGM) {
-                    return false;
+                if (foundry.utils.isNewerVersion(game.version, 12)) {
+                    if (!canvas.visibility.tokenVision || !this.hasSight || game.user.isGM) {
+                        return false;
+                    }
+                } else {
+                    if (!canvas.effects.visibility.tokenVision || !this.hasSight || game.user.isGM) {
+                        return false;
+                    }
                 }
                 return this.controlled || this.isOwner;
             },

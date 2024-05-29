@@ -20,8 +20,11 @@ export class RevealObservableTokensHelpers {
                   }
                 : (token) => {
                       const tolerance = Math.min(token.w, token.h) / 4;
-
-                      return canvas.effects.visibility.testVisibility(token.center, { tolerance, object: token });
+                      if (foundry.utils.isNewerVersion(game.version, 12)) {
+                          return canvas.visibility.testVisibility(token.center, { tolerance, object: token });
+                      } else {
+                          return canvas.effects.visibility.testVisibility(token.center, { tolerance, object: token });
+                      }
                   };
 
             CONFIG.Token.objectClass = class extends CONFIG.Token.objectClass {
@@ -47,16 +50,6 @@ export class RevealObservableTokensHelpers {
             };
 
             const hatchFilter = HatchFilter.create();
-
-            // if (foundry.utils.isNewerVersion(game.version, 11)) {
-            //   Hooks.once("setup", setup);
-            // } else {
-            //   Hooks.once("setup", () => {
-            //     if (!game.settings.get("core", "noCanvas")) {
-            //       Hooks.once("canvasInit", setup);
-            //     }
-            //   });
-            // }
         }
     }
 }

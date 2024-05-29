@@ -49,6 +49,26 @@
                 "name": "Enable debugging",
                 "label": "Prints debug messages to the console",
                 "hint": "Prints debug messages to the console"
+            },
+            "tokenWarpEnable": {
+                "name": "Enable token warp",
+                "hint": "Helps GMs to avoid revealing their maps by automatically cancelling the dragged tokens' movement animation, when there is a wall in their path."
+            },
+            "tokenWarpWallsCancelTokenAnimation": {
+                "name": "Walls cancel token movement animation.",
+                "hint": "When checked and the GM drags tokens over scene walls, the tokens appear at their destinations instantly (no token movement animations). This setting helps GMs to not reveal map areas not meant to be seen by their players (will not have any effect if the token movement animation is OFF)."
+            },
+            "tokenWarpDefaultTokenAnimationSwitch": {
+                "name": "No token movement animations by default.",
+                "hint": "When checked, the tokens appear at their destinations instantly (no token movement animations)."
+            },
+            "tokenWarpExcludedScenes": {
+                "name": "Excluded Scenes.",
+                "hint": "Add Scene UUIDs (or IDs) separated by semicolons (;). Token movement animations always ON."
+            },
+            "tokenWarpDefaultTokenAnimation": {
+                "name": "Token movement animation speed.",
+                "hint": "Default is 6. Foundry v10 was using a default of 12."
             }
         }
     }
