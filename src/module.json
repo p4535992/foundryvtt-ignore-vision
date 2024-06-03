@@ -72,9 +72,18 @@
     "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
     "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
     "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",
-    "allowBugReporter": true,
     "relationships": {
-        "systems": [],
+        "systems": [
+            {
+                "id": "dnd5e",
+                "type": "system",
+                "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+                "compatibility": {
+                    "minimum": "3.2.0",
+                    "verified": "3.2.0"
+                }
+            }
+        ],
         "requires": [
             {
                 "id": "lib-wrapper",
