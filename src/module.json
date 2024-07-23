@@ -2,7 +2,7 @@
     "id": "vision-toolkit",
     "title": "Vision Toolkit",
     "description": "A little module with many features for manage the token vision during the drag and rop on the canvas.",
-    "version": "2.1.12",
+    "version": "2.1.13",
     "authors": [
         {
             "name": "p4535992",
@@ -62,13 +62,13 @@
     "esmodules": ["module.js"],
     "styles": [],
     "compatibility": {
-        "minimum": 11,
-        "verified": 11,
+        "minimum": 12,
+        "verified": 12,
         "maximum": 12
     },
     "url": "https://github.com/p4535992/foundryvtt-vision-toolkit",
-    "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.12/module.json",
-    "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.12/module.zip",
+    "manifest": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.13/module.json",
+    "download": "https://github.com/p4535992/foundryvtt-vision-toolkit/releases/download/2.1.13/module.zip",
     "readme": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/README.md",
     "changelog": "https://github.com/p4535992/foundryvtt-vision-toolkit/blob/master/CHANGELOG.md",
     "bugs": "https://github.com/p4535992/foundryvtt-vision-toolkit/issues",

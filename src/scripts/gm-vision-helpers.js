@@ -102,6 +102,7 @@ export class GmVisionHelpers {
                 });
 
                 Hooks.on("sightRefresh", () => {
+                    const active = game.settings.get(CONSTANTS.MODULE_ID, "activeGmVision");
                     canvas.effects.darkness.filter.alpha = active ? 0.5 : 1;
                 });
 
